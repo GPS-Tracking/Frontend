@@ -33,7 +33,7 @@ function App() {
       <Sidebar />
       <div className="w-[80vw] h-80%">
         <MapContainer center={[-6.761946739265074, 107.20976353938751]} zoom={13} className='w-full'>
-          <TileLayer attribution="&copy; <a>adasd</a>" url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+          <TileLayer attribution="&copy; <a>Kelompok 2</a>" url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
           {Lokasi.map(titik =>(
             <Marker position={titik.Loc}>
