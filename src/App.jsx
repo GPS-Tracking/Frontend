@@ -37,6 +37,7 @@ function App() {
 
           {Lokasi.map(titik =>(
             <Marker position={titik.Loc}>
+              <Popup>{titik.popUp}</Popup>
             </Marker>
           ))
 
