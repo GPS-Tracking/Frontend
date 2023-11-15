@@ -21,7 +21,7 @@ const Lokasi =[
   },
 
   {
-    Loc: [-6.76134, 107.21031],
+    Loc: [-6.75919, 107.21087],
     popUp: "Marker 4"
   }
 ]
@@ -37,7 +37,6 @@ function App() {
 
           {Lokasi.map(titik =>(
             <Marker position={titik.Loc}>
-
             </Marker>
           ))
 
