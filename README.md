@@ -19,9 +19,13 @@ npm install @heroicons/react
 ```bash
 npm i @material-tailwind/react
 ```
-* TailwindCSS 
+* Axios
+```bash
+npm i axios
+```
+* TailwindCSS: 
 `https://tailwindcss.com/`
-* react-leaflet
+* react-leaflet:
 `https://react-leaflet.js.org/`
 
 Run this command for testing

@@ -27,8 +27,8 @@ function App() {
     <>
     <div className='flex mr-auto'>
       <Sidebar />
-      <div className="w-[85vw] h-80%">
-        <MapContainer center={[-6.761946739265074, 107.20976353938751]} zoom={13} className='w-full'>
+      <div className="h-auto w-[1000px]">
+        <MapContainer center={[-6.761946739265074, 107.20976353938751]} zoom={13} className=''>
           <TileLayer attribution="&copy; <a>Kelompok 2</a>" url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
           {data.map(titik =>(
