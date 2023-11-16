@@ -37,31 +37,38 @@ function CardView() {
   }, []);
 
   return (
-    <div className="flex flex-row justify-between items-center mb-20 ml-32">
+    <div className="flex flex-6 justify-between items-center mb-20 ml-32">
+
       <div className="flex-1 mr-4">
         <div className="p-4 rounded-lg font-bold text-center text-black bg-green-600 w-72 h-15">
           <h3>Aman</h3>
           <p>total: {DataAman}</p>
         </div>
-      </div>
-      <div className="flex-1 mr-4">
+
+        <div className="flex-1 mr-4">
         <div className="p-4 rounded-lg font-bold text-center text-black bg-yellow-600 w-72 h-15">
           <h3>Warning</h3>
           <p>total: {DataWarning}</p>
         </div>
       </div>
+      </div>
+
+
       <div className="flex-1 mr-4">
         <div className="p-4 rounded-lg font-bold text-center text-black bg-red-600 w-72 h-15">
           <h3>SOS</h3>
           <p>total: {DataSOS}</p>
         </div>
-      </div>
-      <div className="flex-1 mr-4">
+
+        <div className="flex-1 mr-4">
         <div className="p-4 rounded-lg font-bold text-center text-black bg-blue-400 w-72 h-15">
           <h3>No Status</h3>
           <p>total: {DataNull}</p>
         </div>
       </div>
+
+      </div>
+      
     </div>
     
   );

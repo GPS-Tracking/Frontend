@@ -9,9 +9,9 @@ function Data() {
       <div className="flex-none mr-5">
         <DefaultSidebar />
       </div>
-      <div className="flex-1 ml-4">
+      <div className="flex-1 ml-[-120px]">
         <CardView />
-        <div className="flex-1 ml-4">
+        <div className="flex-1 ml-[120px]">
         <Table />
         </div>
       </div>
