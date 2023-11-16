@@ -19,19 +19,19 @@ function Table() {
   }, []); // Empty dependency array to run the effect only once
 
   return (
-    <div className="p-6 bg-gray-900 rounded-lg">
+    <div className="p-6 bg-red-200 rounded-lg">
     <div className="flex justify-between items-center pb-4">
       <h2 className="text-xl font-semibold leading-loose text-white">Last Report</h2>
     </div>
     <table className="w-full">
       <thead>
         <tr className="text-sm font-semibold text-white">
-          <th className="py-4 border-b border-gray-700 text-center">No</th>
-          <th className="py-4 border-b border-gray-700 text-center">Waktu</th>
-          <th className="py-4 border-b border-gray-700 text-center">Nama Device</th>
-          <th className="py-4 border-b border-gray-700 text-center">Latitude</th>
-          <th className="py-4 border-b border-gray-700 text-center">Longitude</th>
-          <th className="py-4 border-b border-gray-700 text-center">Status</th>
+          <th className="py-4 border-b border-white text-center">No</th>
+          <th className="py-4 border-b border-white text-center">Waktu</th>
+          <th className="py-4 border-b border-white text-center">Nama Device</th>
+          <th className="py-4 border-b border-white text-center">Latitude</th>
+          <th className="py-4 border-b border-white text-center">Longitude</th>
+          <th className="py-4 border-b border-white text-center">Status</th>
         </tr>
       </thead>
       <tbody>

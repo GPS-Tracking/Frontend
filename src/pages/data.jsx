@@ -10,13 +10,12 @@ function Data() {
         <DefaultSidebar />
       </div>
 
-      <div className="flex-1 ml-[-120px]">
+      <div className="ml-[-120px]">
         <CardView />
-        <div className="flex-1 ml-[130px]">
+        <div className="ml-[130px]">
         <Table />
         </div>
       </div>
-      
     </div>
   );
 }
