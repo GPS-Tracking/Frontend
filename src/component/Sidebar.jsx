@@ -13,7 +13,7 @@
       InboxIcon,
     } from "@heroicons/react/24/solid";
     import {Link} from "react-router-dom"
-    import logo from "../icon/logo.jpeg"
+    import logo from "../icon/logo-Kampus-Merdeka.png"
     
     export function DefaultSidebar() {
       return (
