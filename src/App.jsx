@@ -25,7 +25,7 @@ function App() {
 
   return (
     <>
-    <div className='flex mr-auto'>
+    <div className='flex mt-1.5 mr-auto gap-12'>
       <Sidebar />
       <div className="h-auto w-[1000px]">
         <MapContainer center={[-6.761946739265074, 107.20976353938751]} zoom={13} className=''>
