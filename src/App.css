@@ -18,9 +18,9 @@
 
 /* height of the container */
 .leaflet-container {
-  height: 90vh;
+  height: 96.5vh;
   width: 90%;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
 }
 
 .cluster-icon {
