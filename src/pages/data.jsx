@@ -1,6 +1,7 @@
 import React from "react";
 import DefaultSidebar from "../component/Sidebar";
 import CardView from "../component/card";
+import Table from "../component/table";
 
 function Data() {
   return (
@@ -10,6 +11,9 @@ function Data() {
       </div>
       <div className="flex-1 ml-4">
         <CardView />
+        <div className="flex-1 ml-4">
+        <Table />
+        </div>
       </div>
     </div>
   );

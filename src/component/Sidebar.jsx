@@ -11,17 +11,18 @@
       MapIcon,
       UserCircleIcon,
       InboxIcon,
-      BellIcon,
     } from "@heroicons/react/24/solid";
     import {Link} from "react-router-dom"
+    import logo from "../icon/logo.jpeg"
     
     export function DefaultSidebar() {
       return (
         <Card className="h-[calc(100vh-2rem)] w-[280px] max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5 flex">
-          <div className="mb-2 p-4">
-            <Typography variant="h5" color="blue-gray">
+          <div className="mb-2 p-19">
+          <img src={logo} className="ml-[80px] w-20 h-auto"></img>
+            <Typography className="ml-[35px]" variant="h5" color="blue-gray">
               Tracking Dashboard
-            </Typography>
+            </Typography>   
           </div>
 
           <List>
@@ -43,18 +44,6 @@
               Data
               <ListItemSuffix>
                 <Chip value="14" size="sm" variant="ghost" color="blue-gray" className="rounded-full" />
-              </ListItemSuffix>
-            </ListItem>
-            </Link>
-
-            <Link to="/notif">
-            <ListItem>
-              <ListItemPrefix>
-                <BellIcon className="h-5 w-5" />
-              </ListItemPrefix>
-              Log
-              <ListItemSuffix>
-                <Chip value="10" size="sm" variant="ghost" color="blue-gray" className="rounded-full" />
               </ListItemSuffix>
             </ListItem>
             </Link>

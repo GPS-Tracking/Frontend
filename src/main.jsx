@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import Data from './pages/data.jsx'
-import Log from './pages/log.jsx'
 import About from './pages/about.jsx'
 import {
   createBrowserRouter,
@@ -20,11 +19,6 @@ const router = createBrowserRouter([
   {
     path: "/data",
     element: <Data />,
-  },
-
-  {
-    path: "/notif",
-    element: <Log />,
   },
 
   {
