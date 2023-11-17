@@ -19,30 +19,26 @@ function Table() {
   }, []); // Empty dependency array to run the effect only once
 
   return (
-    <div className="p-6 bg-red-200 rounded-lg">
-    <div className="flex justify-between items-center pb-4">
-      <h2 className="text-xl font-semibold leading-loose text-white">Last Report</h2>
-    </div>
-    <table className="w-full">
-      <thead>
-        <tr className="text-sm font-semibold text-white">
-          <th className="py-4 border-b border-white text-center">No</th>
-          <th className="py-4 border-b border-white text-center">Waktu</th>
-          <th className="py-4 border-b border-white text-center">Nama Device</th>
-          <th className="py-4 border-b border-white text-center">Latitude</th>
-          <th className="py-4 border-b border-white text-center">Longitude</th>
-          <th className="py-4 border-b border-white text-center">Status</th>
-        </tr>
-      </thead>
+  <div>
+    <table className="table-auto w-4/5 border-collapse border border-gray-300 mb-20 ml-36 rounded-xl">
+  <thead>
+    <tr className="bg-red-200 border-b-2 border-gray-200 text-white">
+      <th className="p-3 text-sm font-semibold tracking-wide">ID</th>
+      <th className="p-3 text-sm font-semibold tracking-wide">NAMA</th>
+      <th className="p-3 text-sm font-semibold tracking-wide">Longitude</th>
+      <th className="p-3 text-sm font-semibold tracking-wide">Latitude</th>
+      <th className="p-3 text-sm font-semibold tracking-wide">Status</th>
+    </tr>
+  </thead>
       <tbody>
         {data.map((item) => (
-          <tr key={item.id} className="text-sm font-semibold text-white">
-            <td className="text-sm font-semibold text-white">{item.ID}</td>
-            <td className="text-sm font-semibold text-white">{item.Time}</td>
-            <td className="text-sm font-semibold text-white">{item.Name}</td>
-            <td className="text-sm font-semibold text-white">{item.Lattitude}</td>
-            <td className="text-sm font-semibold text-white">{item.Longitude}</td>
-            <td className="text-sm font-semibold text-white">{item.Status}</td>
+          <tr key={item.id} className="odd:bg-[#DFD3C3] even:bg-[#D0B8A8]">
+            <td className="p-3 text-sm text-white text-center">{item.ID}</td>
+            <td className="p-3 text-sm text-white text-center">{item.Time}</td>
+            <td className="p-3 text-sm text-white text-center">{item.Name}</td>
+            <td className="p-3 text-sm text-white text-center">{item.Lattitude}</td>
+            <td className="p-3 text-sm text-white text-center">{item.Longitude}</td>
+            <td className="p-3 text-sm text-white text-center">{item.Status}</td>
           </tr>
         ))}
       </tbody>
