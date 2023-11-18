@@ -5,15 +5,13 @@
 }
 
 #root {
-  height: 100%;
-  width: 100%;
-  display: flex;
+  height: screen;
+  width: screen;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 1em;
   font-family: sans-serif;
-  color: #0077cc; /* Warna biru laut */
   background-color: #f3e4d7;
 }
 
@@ -25,7 +23,6 @@
 }
 
 .cluster-icon {
-  background-color: #0077cc; /* Warna biru laut */
   height: 2em;
   width: 2em;
   color: #fff;

@@ -16,7 +16,7 @@ function Table() {
 
     console.log(data)
     fetchData();
-  }, []); // Empty dependency array to run the effect only once
+  }, []); 
 
   return (
   <div>

@@ -25,9 +25,9 @@ function App() {
 
   return (
     <>
-    <div className='flex mr-auto'>
+    <div className='flex h-screen w-screen'>
       <Sidebar />
-      <div className="h-auto w-screen">
+      <div className="h-auto w-full">
         <MapContainer center={[-6.761946739265074, 107.20976353938751]} zoom={13} className=''>
           <TileLayer attribution="&copy; <a>Kelompok 2</a>" url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 

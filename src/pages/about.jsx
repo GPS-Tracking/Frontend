@@ -4,7 +4,7 @@ import DefaultSidebar from "../component/Sidebar"
 function About() {
     return (
       <>
-        <div className="mr-auto">
+        <div className="flex h-screen w-screen">
         <DefaultSidebar/>
         </div>
       </>
