@@ -1,14 +1,16 @@
-import React from "react"
-import DefaultSidebar from "../component/Sidebar"
+import React from "react";
+import DefaultSidebar from "../component/Sidebar";
+import ProfileCard from "../component/Biodata";
 
 function About() {
-    return (
-      <>
-        <div className="flex h-screen w-screen">
-        <DefaultSidebar/>
-        </div>
-      </>
-    )
-  }
-  
-  export default About
+  return (
+    <div className="flex">
+      <DefaultSidebar />
+      <div className="flex flex-wrap justify-start ml-8 mt-[120px]">
+        <ProfileCard />
+      </div>
+    </div>
+  );
+}
+
+export default About;

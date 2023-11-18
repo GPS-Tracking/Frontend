@@ -53,7 +53,7 @@
               <ListItemPrefix>
                 <UserCircleIcon className="h-5 w-5" />
               </ListItemPrefix>
-              About
+              Developers
             </ListItem>
             </Link>
             
