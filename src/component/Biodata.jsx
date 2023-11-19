@@ -12,7 +12,7 @@ import foto2 from "../assets/img/devin.jpg";
 import foto3 from "../assets/img/ghiyats.jpg";
 import foto4 from "../assets/img/steven.jpg";
 import instagramIcon from "../assets/ig.svg";
-import githubIcon from "../assets/github.svg"; // Path to your GitHub SVG icon
+import githubIcon from "../assets/github.svg";
 
 const instagramLinks = [
   "https://www.instagram.com/irawanaufal29/",
