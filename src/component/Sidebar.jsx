@@ -19,8 +19,8 @@
       return (
         <Card className="h-screen w-1/6 p-5 shadow-xl shadow-blue-gray-900/5 flex">
           <div className="mb-2 p-19">
-          <img src={logo} className="ml-[80px] w-20 h-auto"></img>
-            <Typography className="ml-[35px]" variant="h5" color="blue-gray">
+          <img src={logo} className="ml-[70px] w-20 h-auto"></img>
+            <Typography className="text-center" variant="h5" color="blue-gray">
               Tracking Dashboard
             </Typography>   
           </div>
