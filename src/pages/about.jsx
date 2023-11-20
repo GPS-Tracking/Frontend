@@ -12,11 +12,6 @@ function About() {
           <ProfileCard />
           <Information />
         </div>
-
-        <div>
-
-        </div>
-
       </div>
     </>
   );
