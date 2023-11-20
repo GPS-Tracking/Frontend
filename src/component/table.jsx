@@ -38,18 +38,18 @@ function Table() {
 
   return (
     <div>
-      <table className="table-auto w-4/5 border-collapse border border-gray-300 mb-20 ml-36 rounded-xl">
-        <thead>
-          <tr className="bg-red-500 border-b-2 border-gray-200 text-black">
-            <th className="p-3 text-sm font-semibold tracking-wide w-1/6">ID</th>
-            <th className="p-3 text-sm font-semibold tracking-wide w-1/6">Time</th>
-            <th className="p-3 text-sm font-semibold tracking-wide w-1/6">Name</th>
-            <th className="p-3 text-sm font-semibold tracking-wide w-1/6">Latitude</th>
-            <th className="p-3 text-sm font-semibold tracking-wide w-1/6">Longitude</th>
-            <th className="p-3 text-sm font-semibold tracking-wide w-1/6">Status</th>
-            <th className="p-3 text-sm font-semibold tracking-wide w-1/6">Action</th>
-          </tr>
-        </thead>
+    <table className="table-auto w-4/5 border-collapse border border-gray-300 mb-20 ml-32 rounded-xl" style={{ tableLayout: 'fixed' }}>
+      <thead>
+        <tr className="bg-red-500 border-b-2 border-gray-200 text-black">
+          <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '10%' }}>ID</th>
+          <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '15%' }}>Time</th>
+          <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '20%' }}>Name</th>
+          <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '15%' }}>Latitude</th>
+          <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '15%' }}>Longitude</th>
+          <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '15%' }}>Status</th>
+          <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '10%' }}>Action</th>
+        </tr>
+      </thead>
         <tbody>
           {data.map((item) => (
             <tr key={item.ID} className="odd:bg-blue-100 even:bg-blue-300">
