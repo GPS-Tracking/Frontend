@@ -27,7 +27,7 @@ function Information() {
               type="button"
               className={`inline-block p-4 text-blue-600 rounded-ss-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-blue-500 ${activeTab === "services" && "bg-gray-100 dark:bg-gray-700"}`}
             >
-              Services
+              Partnership
             </button>
           </li>
 
@@ -44,7 +44,7 @@ function Information() {
 
         <div id="defaultTabContent" className="overflow-hidden">
           <div className={`p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "about" && "hidden"}`} id="about" role="tabpanel" aria-labelledby="about-tab">
-            <div className="overflow-y-auto max-h-12"> {/* Set a max height for overflow */}
+            <div className="overflow-y-auto h-20"> {/* Set a max height for overflow */}
               <h2 className="tracking-tight text-gray-900 dark:text-white">
                     Tim kami memiliki keahlian yang terintegrasi untuk menghasilkan produk yang berkualitas.
                     Kami akan senantiasa berkomitmen untuk mengakomodasi setiap kebutuhan client. Memperbaiki setiap layanan yang ada sehingga setiap client mendapatkan kepuasan yang maksimal.
@@ -53,7 +53,7 @@ function Information() {
           </div>
 
           <div className={`p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "services" && "hidden"}`} id="services" role="tabpanel" aria-labelledby="services-tab">
-            <div className="overflow-y-auto max-h-12"> {/* Set a max height for overflow */}
+            <div className="overflow-y-auto h-20"> {/* Set a max height for overflow */}
               <h2 className="tracking-tight text-gray-900 dark:text-white">
                     <h3>Karya Cipta Anak Negeri</h3>
                     <h3>Perusahaan yang bergerak dalam bidang penyedia ,pembuatan dan pemasangan peralatan kontrol custom .Terdiri atas 6 DIVISI</h3>
@@ -70,7 +70,7 @@ function Information() {
           </div>
 
           <div className={`p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "statistics" && "hidden"}`} id="statistics" role="tabpanel" aria-labelledby="statistics-tab">
-            <div className="overflow-y-auto max-h-12"> {/* Set a max height for overflow */}
+            <div className="overflow-y-auto h-20"> {/* Set a max height for overflow */}
               <h2 className="tracking-tight text-gray-900 dark:text-white">
                     Deskripsi Program
                     Kompetisi Kampus Merdeka
