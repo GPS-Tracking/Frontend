@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Sidebar from "../src/component/Sidebar"
 import './App.css';
 import 'leaflet/dist/leaflet.css';
-import { MapContainer, TileLayer, Popup, Marker, Polyline } from 'react-leaflet';
+import { MapContainer, TileLayer, Popup, Marker, Polyline,} from 'react-leaflet';
 import axios from 'axios';
 
 function App() {
@@ -30,6 +30,11 @@ function App() {
     groupedData[titik.Name].push([titik.Lattitude, titik.Longitude]);
   });
 
+  const warnaMarker = (index) => {
+    const colors = ["blue", "gold", "red", "green", "orange", "yellow", "violet", "grey", "black"];
+    return colors[index % colors.length];
+  }
+
   return (
     <>
       <div className='flex h-screen w-screen'>
@@ -48,7 +53,7 @@ function App() {
                 {data
                   .filter(titik => titik.Name === name)
                   .map(titik => (
-                    <Marker key={titik.id} position={[titik.Lattitude, titik.Longitude]}>
+                    <Marker key={titik.id} position={[titik.Lattitude, titik.Longitude]} icon={new L.Icon({iconUrl:`https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${warnaMarker(index)}.png`, iconSize: [25, 41]})}>
                       <Popup>
                         {titik.Name}
                         <br />

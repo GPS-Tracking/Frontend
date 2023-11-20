@@ -9,7 +9,7 @@ function Information() {
 
   return (
     <>
-      <div className="w-full ml-3 mr-28 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="w-full ml-16 mr-16 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800" id="defaultTab" role="tablist">
           <li className="me-2">
             <button
@@ -44,7 +44,7 @@ function Information() {
 
         <div id="defaultTabContent" className="overflow-hidden">
           <div className={`p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "about" && "hidden"}`} id="about" role="tabpanel" aria-labelledby="about-tab">
-            <div className="overflow-y-auto h-20"> {/* Set a max height for overflow */}
+            <div className="overflow-y-auto h-20">
               <h2 className="tracking-tight text-gray-900 dark:text-white">
                     Tim kami memiliki keahlian yang terintegrasi untuk menghasilkan produk yang berkualitas.
                     Kami akan senantiasa berkomitmen untuk mengakomodasi setiap kebutuhan client. Memperbaiki setiap layanan yang ada sehingga setiap client mendapatkan kepuasan yang maksimal.
@@ -53,9 +53,9 @@ function Information() {
           </div>
 
           <div className={`p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "services" && "hidden"}`} id="services" role="tabpanel" aria-labelledby="services-tab">
-            <div className="overflow-y-auto h-20"> {/* Set a max height for overflow */}
+            <div className="overflow-y-auto h-20">
               <h2 className="tracking-tight text-gray-900 dark:text-white">
-                    <h3>Karya Cipta Anak Negeri</h3>
+                    <h3>Karya Cipta Anak Negeri (Kartanagari)</h3>
                     <h3>Perusahaan yang bergerak dalam bidang penyedia ,pembuatan dan pemasangan peralatan kontrol custom .Terdiri atas 6 DIVISI</h3>
                     <ul>
                         <li>1.KONTROL SPESIAL & PROTOTIPE</li>
@@ -70,11 +70,10 @@ function Information() {
           </div>
 
           <div className={`p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "statistics" && "hidden"}`} id="statistics" role="tabpanel" aria-labelledby="statistics-tab">
-            <div className="overflow-y-auto h-20"> {/* Set a max height for overflow */}
+            <div className="overflow-y-auto h-20">
               <h2 className="tracking-tight text-gray-900 dark:text-white">
-                    Deskripsi Program
-                    Kompetisi Kampus Merdeka
-                    Program Kompetisi Kampus Merdeka (PK-KM) merupakan program kompetisi terbuka, dengan sistem seleksi berkelompok (tiered system).
+                    <h3>Kompetisi Kampus Merdeka</h3>
+                    <h3>Program Kompetisi Kampus Merdeka (PK-KM) merupakan program kompetisi terbuka, dengan sistem seleksi berkelompok (tiered system).</h3>
               </h2>
             </div>
           </div>

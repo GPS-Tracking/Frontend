@@ -27,6 +27,8 @@ npm i axios
 `https://tailwindcss.com/`
 * react-leaflet:
 `https://react-leaflet.js.org/`
+* Custom-Marker by Pointhi:
+`https://github.com/pointhi/leaflet-color-markers`
 
 Run this command for testing
 ```bash
