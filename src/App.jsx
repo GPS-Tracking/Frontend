@@ -57,9 +57,7 @@ function App() {
                       <Popup>
                         {titik.Name}
                         <br />
-                        {titik.Lattitude}
-                        <br />
-                        {titik.Longitude}
+                        {titik.Status}
                       </Popup>
                     </Marker>
                   ))}
