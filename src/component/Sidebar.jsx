@@ -17,7 +17,7 @@ import logo4 from "../icon/ugtech.png";
 
 export function DefaultSidebar() {
   return (
-    <Card className="h-screen w-1/6 p-5 shadow-xl shadow-blue-gray-900/5 flex">
+    <Card className="h-screen w-1/6 p-5 shadow-xl shadow-blue-gray-900/5">
       <div className="mb-2 p-19">
         <img src={logo} className="ml-[70px] w-20 h-auto" alt="Logo" />
         <Typography className="text-center" variant="h5" color="blue-gray">

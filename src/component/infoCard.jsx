@@ -42,9 +42,9 @@ function Information() {
           </li>
         </ul>
 
-        <div id="defaultTabContent" className="overflow-hidden">
+        <div id="defaultTabContent">
           <div className={`p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "about" && "hidden"}`} id="about" role="tabpanel" aria-labelledby="about-tab">
-            <div className="overflow-y-auto h-20">
+            <div className="">
               <h2 className="tracking-tight text-gray-900 dark:text-white">
                     Tim kami memiliki keahlian yang terintegrasi untuk menghasilkan produk yang berkualitas.
                     Kami akan senantiasa berkomitmen untuk mengakomodasi setiap kebutuhan client. Memperbaiki setiap layanan yang ada sehingga setiap client mendapatkan kepuasan yang maksimal.
@@ -52,25 +52,29 @@ function Information() {
             </div>
           </div>
 
-          <div className={`p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "services" && "hidden"}`} id="services" role="tabpanel" aria-labelledby="services-tab">
-            <div className="overflow-y-auto h-20">
-              <h2 className="tracking-tight text-gray-900 dark:text-white">
-                    <h3>Karya Cipta Anak Negeri (Kartanagari)</h3>
-                    <h3>Perusahaan yang bergerak dalam bidang penyedia ,pembuatan dan pemasangan peralatan kontrol custom .Terdiri atas 6 DIVISI</h3>
-                    <ul>
-                        <li>1.KONTROL SPESIAL & PROTOTIPE</li>
-                        <li>2.IoT dan OTOMASI</li>
-                        <li>3.PLTS / SOLAR PANEL</li>
-                        <li>4.EWS/DWS ( EARLY WARNING SYSTEM )</li>
-                        <li>5.ENERGI (POWER WALL / CHARGING STATION)</li>
-                        <li>6.OTOMOTIF DAN TRANSPORTASI (MOTOR & MOBIL LISTRIK,TAXI DRONE)</li>
-                    </ul>
+          <div className={`p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "services" && "hidden"}`} id="about" role="tabpanel" aria-labelledby="about-tab">
+          <div className="">
+            <h2 className="tracking-tight text-gray-900 dark:text-white">
+              <h3>Karya Cipta Anak Negeri (Kartanagari)</h3>
+              <h3>Perusahaan yang bergerak dalam bidang penyedia, pembuatan, dan pemasangan peralatan kontrol custom. Terdiri atas 6 divisi, yakni:</h3>
+              <div className="grid grid-cols-2 gap-4">
+                <ul>
+                  <li>1.) Kontrol Spesial dan Prototipe</li>
+                  <li>3.) PLTS / Panel Surya</li>
+                  <li>5.) Energi (Power Wall / Charging Station)</li>
+                </ul>
+                <ul>
+                  <li>2.) IoT dan Otomasi</li>
+                  <li>4.) EWS/DWS (Early Warning System)</li>
+                  <li>6.) Otomotif dan Transportasi (Motor & Mobil Listrik, Taxi Drone)</li>
+                </ul>
+              </div>
               </h2>
             </div>
-          </div>
+        </div>
 
           <div className={`p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "statistics" && "hidden"}`} id="statistics" role="tabpanel" aria-labelledby="statistics-tab">
-            <div className="overflow-y-auto h-20">
+            <div className="">
               <h2 className="tracking-tight text-gray-900 dark:text-white">
                     <h3>Kompetisi Kampus Merdeka</h3>
                     <h3>Program Kompetisi Kampus Merdeka (PK-KM) merupakan program kompetisi terbuka, dengan sistem seleksi berkelompok (tiered system).</h3>

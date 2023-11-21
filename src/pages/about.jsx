@@ -8,7 +8,7 @@ function About() {
     <>
       <div className="flex">
         <DefaultSidebar />
-        <div className="flex flex-wrap justify-center ml-8 mt-[10px]">
+        <div className="flex flex-wrap justify-center ml-8 mt-[10px] h-full">
           <ProfileCard />
           <Information />
         </div>
