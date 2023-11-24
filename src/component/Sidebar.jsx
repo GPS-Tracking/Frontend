@@ -41,9 +41,6 @@ export function DefaultSidebar() {
               <InboxIcon className="h-5 w-5" />
             </ListItemPrefix>
             Data
-            <ListItemSuffix>
-              <Chip value="14" size="sm" variant="ghost" color="blue-gray" className="rounded-full" />
-            </ListItemSuffix>
           </ListItem>
         </Link>
 
