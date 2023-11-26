@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Sidebar from "../src/component/Sidebar"
 import './App.css';
 import 'leaflet/dist/leaflet.css';
-import { MapContainer, TileLayer, Popup, Marker, Polyline,} from 'react-leaflet';
+import { MapContainer, TileLayer, Popup, Marker, Polyline, Tooltip } from 'react-leaflet';
 import axios from 'axios';
 
 function App() {
@@ -31,9 +31,9 @@ function App() {
   });
 
   const warnaMarker = (index) => {
-    const colors = ["blue", "gold", "red", "green", "orange", "yellow", "violet", "grey", "black"];
-    return colors[index % colors.length];
-  }
+  const colors = ["red", "gold", "green", "blue", "violet"];
+  return colors[index % colors.length];
+}
 
   return (
     <>
@@ -47,18 +47,18 @@ function App() {
               <div key={index}>
                 <h2>{name}</h2>
                 {polylinePoints.length > 1 && (
-                  <Polyline key={index} positions={polylinePoints} color="blue" />
+                  <Polyline key={index} positions={polylinePoints} color="gray" />
                 )}
 
                 {data
                   .filter(titik => titik.Name === name)
                   .map(titik => (
                     <Marker key={titik.id} position={[titik.Lattitude, titik.Longitude]} icon={new L.Icon({iconUrl:`https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-${warnaMarker(index)}.png`, iconSize: [25, 41]})}>
-                      <Popup>
+                      <Tooltip direction="top" offset={[0, -20]} opacity={1} permanent>
                         {titik.Name}
                         <br />
                         {titik.Status}
-                      </Popup>
+                      </Tooltip>
                     </Marker>
                   ))}
               </div>
