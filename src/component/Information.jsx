@@ -9,7 +9,7 @@ function Information() {
 
   return (
     <>
-      <div className="w-full ml-16 mr-16 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="w-full p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800" id="defaultTab" role="tablist">
           <li className="me-2">
             <button
@@ -23,9 +23,9 @@ function Information() {
 
           <li className="me-2">
             <button
-              onClick={() => handleTabClick("services")}
+              onClick={() => handleTabClick("parthnership")}
               type="button"
-              className={`inline-block p-4 text-blue-600 rounded-ss-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-blue-500 ${activeTab === "services" && "bg-gray-100 dark:bg-gray-700"}`}
+              className={`inline-block p-4 text-blue-600 rounded-ss-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-blue-500 ${activeTab === "parthnership" && "bg-gray-100 dark:bg-gray-700"}`}
             >
               Partnership
             </button>
@@ -33,9 +33,9 @@ function Information() {
 
           <li className="me-2">
             <button
-              onClick={() => handleTabClick("statistics")}
+              onClick={() => handleTabClick("facts")}
               type="button"
-              className={`inline-block p-4 text-blue-600 rounded-ss-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-blue-500 ${activeTab === "statistics" && "bg-gray-100 dark:bg-gray-700"}`}
+              className={`inline-block p-4 text-blue-600 rounded-ss-lg hover:bg-gray-100 dark:bg-gray-800 dark:hover:bg-gray-700 dark:text-blue-500 ${activeTab === "facts" && "bg-gray-100 dark:bg-gray-700"}`}
             >
               Facts
             </button>
@@ -43,7 +43,7 @@ function Information() {
         </ul>
 
         <div id="defaultTabContent">
-          <div className={`p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "about" && "hidden"}`} id="about" role="tabpanel" aria-labelledby="about-tab">
+          <div className={`p-5 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "about" && "hidden"}`} id="about" role="tabpanel" aria-labelledby="about-tab">
             <div className="">
               <h2 className="tracking-tight text-gray-900 dark:text-white">
                     Tim kami memiliki keahlian yang terintegrasi untuk menghasilkan produk yang berkualitas.
@@ -52,7 +52,7 @@ function Information() {
             </div>
           </div>
 
-          <div className={`p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "services" && "hidden"}`} id="about" role="tabpanel" aria-labelledby="about-tab">
+          <div className={`p-5 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "parthnership" && "hidden"}`} id="about" role="tabpanel" aria-labelledby="about-tab">
           <div className="">
             <h2 className="tracking-tight text-gray-900 dark:text-white">
               <h3>Karya Cipta Anak Negeri (Kartanagari)</h3>
@@ -73,11 +73,11 @@ function Information() {
             </div>
         </div>
 
-          <div className={`p-4 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "statistics" && "hidden"}`} id="statistics" role="tabpanel" aria-labelledby="statistics-tab">
+          <div className={`p-5 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "facts" && "hidden"}`} id="facts" role="tabpanel" aria-labelledby="facts-tab">
             <div className="">
               <h2 className="tracking-tight text-gray-900 dark:text-white">
                     <h3>Kompetisi Kampus Merdeka</h3>
-                    <h3>Program Kompetisi Kampus Merdeka (PK-KM) merupakan program kompetisi terbuka, dengan sistem seleksi berkelompok (tiered system).</h3>
+                    <h3>Program Kompetisi Kampus Merdeka (PKKM) merupakan program kompetisi terbuka, dengan sistem seleksi berkelompok (tiered system).</h3>
               </h2>
             </div>
           </div>
