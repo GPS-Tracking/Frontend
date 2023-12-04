@@ -11,6 +11,7 @@ import foto1 from "../assets/img/naufal.png";
 import foto2 from "../assets/img/devin.jpg";
 import foto3 from "../assets/img/ghiyats.jpg";
 import foto4 from "../assets/img/steven.jpg";
+import foto5 from "../assets/img/dosen.jpg";
 import instagramIcon from "../assets/ig.svg";
 import githubIcon from "../assets/github.svg";
 
@@ -31,15 +32,56 @@ const githubLinks = [
 export function ProfileCard() {
   return (
     <div className="flex justify-center">
+      {/* ProfileCard 0 */}
+      <div>
+        <Card className="w-52 m-3 mt-8 mb-8">
+          <CardHeader floated={false} className="h-68">
+            <img src={foto5} alt="profile-picture" />
+          </CardHeader>
+          <CardBody className="text-center">
+            <Typography variant="h4" color="blue-gray" className="mb-2">
+              Mara Nugraha, SKom.,MMSI.
+            </Typography>
+            <Typography
+              color="blue-gray"
+              className="font-medium"
+              textGradient
+            >
+              Supervisor
+            </Typography>
+          </CardBody>
+          <CardFooter className="flexbox flex justify-center gap-7 pt-2">
+            <Tooltip content="Instagram">
+              <a
+                href={instagramLinks[0]}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={instagramIcon} alt="Instagram" className="w-6 h-6" />
+              </a>
+            </Tooltip>
+            <Tooltip content="GitHub">
+              <a
+                href={githubLinks[0]}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={githubIcon} alt="GitHub" className="w-6 h-6" />
+              </a>
+            </Tooltip>
+          </CardFooter>
+        </Card>
+      </div>
+
       {/* ProfileCard 1 */}
       <div>
-        <Card className="w-64 m-4">
+        <Card className="w-52 m-3 mt-8 mb-8">
           <CardHeader floated={false} className="h-68">
             <img src={foto1} alt="profile-picture" />
           </CardHeader>
           <CardBody className="text-center">
             <Typography variant="h4" color="blue-gray" className="mb-2">
-              Naufal Maulana Al-Ghifari Irawan
+              Naufal Maulana
             </Typography>
             <Typography
               color="blue-gray"
@@ -74,13 +116,13 @@ export function ProfileCard() {
 
       {/* ProfileCard 2 */}
       <div>
-        <Card className="w-64 m-4">
+        <Card className="w-52 m-3 mt-8 mb-8">
           <CardHeader floated={false} className="h-68">
             <img src={foto2} alt="profile-picture" />
           </CardHeader>
           <CardBody className="text-center">
             <Typography variant="h4" color="blue-gray" className="mb-2">
-              Devin Nathaniel Wongso
+              Devin Nathaniel
             </Typography>
             <Typography
               color="blue-gray"
@@ -115,7 +157,7 @@ export function ProfileCard() {
 
       {/* ProfileCard 3 */}
       <div>
-        <Card className="w-64 m-4">
+        <Card className="w-52 m-3 mt-8 mb-8">
           <CardHeader floated={false} className="h-68">
             <img src={foto3} alt="profile-picture" />
           </CardHeader>
@@ -156,7 +198,7 @@ export function ProfileCard() {
 
       {/* ProfileCard 4 */}
       <div>
-        <Card className="w-64 m-4">
+        <Card className="w-52 m-3 mt-8 mb-8">
           <CardHeader floated={false} className="h-68">
             <img src={foto4} alt="profile-picture" />
           </CardHeader>
