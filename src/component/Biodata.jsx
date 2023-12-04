@@ -14,6 +14,7 @@ import foto4 from "../assets/img/steven.jpg";
 import foto5 from "../assets/img/dosen.jpg";
 import instagramIcon from "../assets/ig.svg";
 import githubIcon from "../assets/github.svg";
+import gunadarmaIcon from "../assets/gunadarma.svg";
 
 const instagramLinks = [
   "https://www.instagram.com/irawanaufal29/",
@@ -27,6 +28,10 @@ const githubLinks = [
   "https://github.com/XiAnzheng-ID",
   "https://github.com/ghiyatssyahied",
   "https://github.com/MajinVader",
+];
+
+const gstaffLinks = [
+  "http://maranugraha.staff.gunadarma.ac.id/",
 ];
 
 export function ProfileCard() {
@@ -50,23 +55,14 @@ export function ProfileCard() {
               Supervisor
             </Typography>
           </CardBody>
-          <CardFooter className="flexbox flex justify-center gap-7 pt-2">
-            <Tooltip content="Instagram">
+          <CardFooter className="flex justify-center gap-7 pt-2">
+            <Tooltip content="StaffSite Universitas Gunadarma">
               <a
-                href={instagramLinks[0]}
+                href={gstaffLinks[0]}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={instagramIcon} alt="Instagram" className="w-6 h-6" />
-              </a>
-            </Tooltip>
-            <Tooltip content="GitHub">
-              <a
-                href={githubLinks[0]}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={githubIcon} alt="GitHub" className="w-6 h-6" />
+                <img src={gunadarmaIcon} alt="StaffSite Universitas Gunadarma" className="w-6 h-6" />
               </a>
             </Tooltip>
           </CardFooter>
