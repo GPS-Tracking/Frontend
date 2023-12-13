@@ -56,10 +56,10 @@ export function DefaultSidebar() {
 
 
       <div className="mt-5">
-        <Typography variant="body" color="blue-gray">
-          Partnership with:
+        <Typography className="text-center" variant="body" color="blue-gray">
+          Partnership with
         </Typography>
-        <div className="mt-5 grid gap-4 grid-cols-2">
+        <div className="ml-2 mt-5 grid gap-4 grid-cols-2">
           <img src={logo2} className="ml-5 w-16 h-auto"/>
           <img src={logo3} className="w-16 h-auto"/>
           <img src={logo4} className="ml-12 w-26 h-auto"/>

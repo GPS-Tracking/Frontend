@@ -43,7 +43,7 @@ function Information() {
         </ul>
 
         <div id="defaultTabContent">
-        <div className={`p-5 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "about" && "hidden"}`} id="about" role="tabpanel" aria-labelledby="about-tab">
+        <div className={`p-5 bg-white rounded-lg md:p-6 dark:bg-gray-800 ${activeTab !== "about" && "hidden"}`} id="about" role="tabpanel" aria-labelledby="about-tab">
             <div className="">
               <h2 className="tracking-tight text-gray-900 dark:text-white">
                     Tim kami memiliki keahlian yang terintegrasi untuk menghasilkan produk yang berkualitas.
@@ -52,7 +52,7 @@ function Information() {
             </div>
           </div>
 
-          <div className={`p-5 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "parthnership" && "hidden"}`} id="partnership" role="tabpanel" aria-labelledby="partnership-tab">
+          <div className={`p-5 bg-white rounded-lg md:p-6 dark:bg-gray-800 ${activeTab !== "parthnership" && "hidden"}`} id="partnership" role="tabpanel" aria-labelledby="partnership-tab">
             <div className="">
               <h2 className="tracking-tight text-gray-900 dark:text-white">
               <h3>Karya Cipta Anak Negeri (Kartanagari)</h3>
@@ -73,7 +73,7 @@ function Information() {
             </div>
         </div>
 
-        <div className={`p-5 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "facts" && "hidden"}`} id="facts" role="tabpanel" aria-labelledby="facts-tab">
+        <div className={`p-5 bg-white rounded-lg md:p-6 dark:bg-gray-800 ${activeTab !== "facts" && "hidden"}`} id="facts" role="tabpanel" aria-labelledby="facts-tab">
             <div className="">
               <h2 className="tracking-tight text-gray-900 dark:text-white">
                 <h3>Kompetisi Kampus Merdeka</h3>

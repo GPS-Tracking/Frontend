@@ -77,7 +77,7 @@ export function ProfileCard() {
           </CardHeader>
           <CardBody className="text-center">
             <Typography variant="h4" color="blue-gray" className="mb-2">
-              Naufal Maulana Al-Ghifari Irawan
+              Naufal Maulana Al-Ghifari I.
             </Typography>
             <Typography
               color="blue-gray"
