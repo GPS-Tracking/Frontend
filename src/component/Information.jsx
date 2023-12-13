@@ -9,7 +9,7 @@ function Information() {
 
   return (
     <>
-      <div className="w-full p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+       <div className="w-full p-5 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <ul className="flex flex-wrap text-sm font-medium text-center text-gray-500 border-b border-gray-200 rounded-t-lg bg-gray-50 dark:border-gray-700 dark:text-gray-400 dark:bg-gray-800" id="defaultTab" role="tablist">
           <li className="me-2">
             <button
@@ -43,7 +43,7 @@ function Information() {
         </ul>
 
         <div id="defaultTabContent">
-          <div className={`p-5 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "about" && "hidden"}`} id="about" role="tabpanel" aria-labelledby="about-tab">
+        <div className={`p-5 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "about" && "hidden"}`} id="about" role="tabpanel" aria-labelledby="about-tab">
             <div className="">
               <h2 className="tracking-tight text-gray-900 dark:text-white">
                     Tim kami memiliki keahlian yang terintegrasi untuk menghasilkan produk yang berkualitas.
@@ -52,9 +52,9 @@ function Information() {
             </div>
           </div>
 
-          <div className={`p-5 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "parthnership" && "hidden"}`} id="about" role="tabpanel" aria-labelledby="about-tab">
-          <div className="">
-            <h2 className="tracking-tight text-gray-900 dark:text-white">
+          <div className={`p-5 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "parthnership" && "hidden"}`} id="partnership" role="tabpanel" aria-labelledby="partnership-tab">
+            <div className="">
+              <h2 className="tracking-tight text-gray-900 dark:text-white">
               <h3>Karya Cipta Anak Negeri (Kartanagari)</h3>
               <h3>Perusahaan yang bergerak dalam bidang penyedia, pembuatan, dan pemasangan peralatan kontrol custom. Terdiri atas 6 divisi, yakni:</h3>
               <div className="grid grid-cols-2 gap-4">
@@ -73,9 +73,10 @@ function Information() {
             </div>
         </div>
 
-          <div className={`p-5 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "facts" && "hidden"}`} id="facts" role="tabpanel" aria-labelledby="facts-tab">
+        <div className={`p-5 bg-white rounded-lg md:p-8 dark:bg-gray-800 ${activeTab !== "facts" && "hidden"}`} id="facts" role="tabpanel" aria-labelledby="facts-tab">
             <div className="">
               <h2 className="tracking-tight text-gray-900 dark:text-white">
+                <h3>Kompetisi Kampus Merdeka</h3>
                     <h3>Kompetisi Kampus Merdeka</h3>
                     <h3>Program Kompetisi Kampus Merdeka (PKKM) merupakan program kompetisi terbuka, dengan sistem seleksi berkelompok (tiered system).</h3>
               </h2>
