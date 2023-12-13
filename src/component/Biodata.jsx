@@ -38,16 +38,14 @@ export function ProfileCard() {
   return (
     <div className="flex justify-center">
       {/* ProfileCard 0 */}
-      <div>
-        <Card className="w-52 m-3 mt-8 mb-8">
+      <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2">
+        <Card className="w-full">
           <CardHeader floated={false} className="h-68">
             <img src={foto5} alt="profile-picture" />
           </CardHeader>
           <CardBody className="text-center">
             <Typography variant="h4" color="blue-gray" className="mb-2">
-              Mara 
-              <br/>
-              Nugraha, SKom.,MMSI.
+              Mara Nugraha, SKom.,MMSI.
             </Typography>
             <Typography
               color="blue-gray"
@@ -72,8 +70,8 @@ export function ProfileCard() {
       </div>
 
       {/* ProfileCard 1 */}
-      <div>
-        <Card className="w-52 m-3 mt-8 mb-8">
+      <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2">
+        <Card className="w-full">
           <CardHeader floated={false} className="h-68">
             <img src={foto1} alt="profile-picture" />
           </CardHeader>
@@ -113,18 +111,14 @@ export function ProfileCard() {
       </div>
 
       {/* ProfileCard 2 */}
-      <div>
-        <Card className="w-52 m-3 mt-8 mb-8">
+      <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2">
+        <Card className="w-full">
           <CardHeader floated={false} className="h-68">
             <img src={foto2} alt="profile-picture" />
           </CardHeader>
           <CardBody className="text-center">
             <Typography variant="h4" color="blue-gray" className="mb-2">
-              Devin 
-              <br/>
-              Nathaniel
-              <br/>
-              Wongso
+              Devin Nathaniel Wongso
             </Typography>
             <Typography
               color="blue-gray"
@@ -158,16 +152,14 @@ export function ProfileCard() {
       </div>
 
       {/* ProfileCard 3 */}
-      <div>
-        <Card className="w-52 m-3 mt-8 mb-8">
+      <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2">
+        <Card className="w-full">
           <CardHeader floated={false} className="h-68">
             <img src={foto3} alt="profile-picture" />
           </CardHeader>
           <CardBody className="text-center">
             <Typography variant="h4" color="blue-gray" className="mb-2">
-            Ghiyats 
-            <br/>
-            Ibnu 
+            Ghiyats Ibnu 
             <br/>
             Syahied
             </Typography>
@@ -203,8 +195,8 @@ export function ProfileCard() {
       </div>
 
       {/* ProfileCard 4 */}
-      <div>
-        <Card className="w-52 m-3 mt-8 mb-8">
+      <div className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 p-2">
+        <Card className="w-full">
           <CardHeader floated={false} className="h-68">
             <img src={foto4} alt="profile-picture" />
           </CardHeader>
@@ -212,9 +204,7 @@ export function ProfileCard() {
             <Typography variant="h4" color="blue-gray" className="mb-2">
               Steven
               <br/>
-              Jordan
-              <br/>
-              ​
+              Jordan​
             </Typography>
             <Typography
               color="blue-gray"
