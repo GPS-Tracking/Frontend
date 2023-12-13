@@ -77,7 +77,6 @@ function Information() {
             <div className="">
               <h2 className="tracking-tight text-gray-900 dark:text-white">
                 <h3>Kompetisi Kampus Merdeka</h3>
-                    <h3>Kompetisi Kampus Merdeka</h3>
                     <h3>Program Kompetisi Kampus Merdeka (PKKM) merupakan program kompetisi terbuka, dengan sistem seleksi berkelompok (tiered system).</h3>
               </h2>
             </div>
