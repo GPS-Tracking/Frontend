@@ -45,7 +45,9 @@ export function ProfileCard() {
           </CardHeader>
           <CardBody className="text-center">
             <Typography variant="h4" color="blue-gray" className="mb-2">
-              Mara Nugraha, SKom.,MMSI.
+              Mara 
+              <br/>
+              Nugraha, SKom.,MMSI.
             </Typography>
             <Typography
               color="blue-gray"
@@ -77,7 +79,7 @@ export function ProfileCard() {
           </CardHeader>
           <CardBody className="text-center">
             <Typography variant="h4" color="blue-gray" className="mb-2">
-              Naufal Maulana
+              Naufal Maulana Al-Ghifari Irawan
             </Typography>
             <Typography
               color="blue-gray"
@@ -118,7 +120,11 @@ export function ProfileCard() {
           </CardHeader>
           <CardBody className="text-center">
             <Typography variant="h4" color="blue-gray" className="mb-2">
-              Devin Nathaniel
+              Devin 
+              <br/>
+              Nathaniel
+              <br/>
+              Wongso
             </Typography>
             <Typography
               color="blue-gray"
@@ -159,7 +165,11 @@ export function ProfileCard() {
           </CardHeader>
           <CardBody className="text-center">
             <Typography variant="h4" color="blue-gray" className="mb-2">
-            Ghiyats Ibnu Syahied
+            Ghiyats 
+            <br/>
+            Ibnu 
+            <br/>
+            Syahied
             </Typography>
             <Typography
               color="blue-gray"
@@ -203,6 +213,8 @@ export function ProfileCard() {
               Steven
               <br/>
               Jordan
+              <br/>
+              ​
             </Typography>
             <Typography
               color="blue-gray"

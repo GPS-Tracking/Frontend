@@ -49,7 +49,7 @@ export function DefaultSidebar() {
             <ListItemPrefix>
               <UserCircleIcon className="h-5 w-5" />
             </ListItemPrefix>
-            Developers
+            About
           </ListItem>
         </Link>
       </List>
