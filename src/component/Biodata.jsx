@@ -8,9 +8,9 @@ import {
   Tooltip,
 } from "@material-tailwind/react";
 import foto1 from "../assets/img/naufal.png";
-import foto2 from "../assets/img/devin.jpg";
-import foto3 from "../assets/img/ghiyats.jpg";
-import foto4 from "../assets/img/steven.jpg";
+import foto2 from "../assets/img/devin.png";
+import foto3 from "../assets/img/ghiyats.png";
+import foto4 from "../assets/img/steven.png";
 import foto5 from "../assets/img/dosen.jpg";
 import instagramIcon from "../assets/ig.svg";
 import githubIcon from "../assets/github.svg";
