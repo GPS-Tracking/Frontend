@@ -1,5 +1,7 @@
+// App.jsx
 import React, { useEffect, useState } from 'react';
 import Sidebar from "../src/component/Sidebar";
+// import Legenda from "../src/component/Legenda";
 import './App.css';
 import axios from 'axios';
 import MapComponent from '../src/component/MapComponent';
@@ -29,17 +31,26 @@ function App() {
     groupedData[titik.Name].push([titik.Lattitude, titik.Longitude]);
   });
 
-  const warnaMarker = (index) => {
-    const colors = ["red", "gold", "green", "blue", "violet"];
-    return colors[index % colors.length];
-  }
+  const warnaMarker = (status) => {
+    switch (status) {
+      case "SOS":
+        return "red";
+      case "Warning":
+        return "gold";
+      case "Aman":
+        return "green";
+      default:
+        return "blue";
+    }
+  };
 
   return (
     <>
-      <div className='flex h-screen w-screen'>
+      <div className='flex h-screen w-screen relative'>
         <Sidebar />
-        <div className="h-auto w-full">
+        <div className="h-auto w-full relative">
           <MapComponent data={data} groupedData={groupedData} warnaMarker={warnaMarker} />
+          {/* <Legenda /> */}
         </div>
       </div>
     </>
