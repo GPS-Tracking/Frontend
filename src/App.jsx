@@ -46,9 +46,9 @@ function App() {
 
   return (
     <>
-      <div className='flex h-screen w-screen relative'>
+      <div className='flex h-screen w-screen'>
         <Sidebar />
-        <div className="h-auto w-full relative">
+        <div className="h-auto w-full">
           <MapComponent data={data} groupedData={groupedData} warnaMarker={warnaMarker} />
           {/* <Legenda /> */}
         </div>
