@@ -1,7 +1,7 @@
 // App.jsx
 import React, { useEffect, useState } from 'react';
 import Sidebar from "../src/component/Sidebar";
-// import Legenda from "../src/component/Legenda";
+import Legenda from "../src/component/Legenda";
 import './App.css';
 import axios from 'axios';
 import MapComponent from '../src/component/MapComponent';
@@ -48,10 +48,10 @@ function App() {
     <>
       <div className='flex h-screen w-screen'>
         <Sidebar />
-        <div className="h-auto w-full">
+        <div className="z-10 h-auto w-full">
           <MapComponent data={data} groupedData={groupedData} warnaMarker={warnaMarker} />
-          {/* <Legenda /> */}
         </div>
+        <Legenda />
       </div>
     </>
   );
