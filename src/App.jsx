@@ -1,7 +1,7 @@
 // App.jsx
 import React, { useEffect, useState } from 'react';
 import Sidebar from "../src/component/Sidebar";
-// import Legenda from "../src/component/Legenda";
+import Legenda from "../src/component/Legenda";
 import './App.css';
 import axios from 'axios';
 import MapComponent from '../src/component/MapComponent';
