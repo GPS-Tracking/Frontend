@@ -48,10 +48,10 @@ function App() {
     <>
       <div className='flex h-screen w-screen'>
         <Sidebar />
-        <div className="h-auto w-full">
+        <div className="z-10 h-auto w-full">
           <MapComponent data={data} groupedData={groupedData} warnaMarker={warnaMarker} />
-          {/* <Legenda /> */}
         </div>
+        <Legenda />
       </div>
     </>
   );

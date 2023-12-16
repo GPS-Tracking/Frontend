@@ -3,7 +3,7 @@ import React from 'react';
 class Legenda extends React.Component {
   render() {
     return (
-      <div className="absolute top-4 right-4 z-10 bg-white p-4 rounded shadow-md md:block">
+      <div className="absolute top-4 right-4 z-50 bg-white p-4 rounded shadow-md md:block">
         <h2 className="text-lg font-semibold mb-2">Legenda</h2>
         <div className="flex flex-col">
           <div className="flex items-center mb-2">
