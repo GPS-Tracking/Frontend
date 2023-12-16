@@ -1,4 +1,3 @@
-// App.jsx
 import React, { useEffect, useState } from 'react';
 import Sidebar from "../src/component/Sidebar";
 import Legenda from "../src/component/Legenda";

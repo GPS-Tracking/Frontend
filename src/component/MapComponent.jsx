@@ -29,11 +29,9 @@ class MapComponent extends Component {
                   })}
                 >
                   {/* klo ga mau di hover , permanent ganti ke true */}
-                  <Tooltip direction="left" offset={[0, -20]} opacity={1} permanent={false} className="custom-tooltip">
+                  <Tooltip direction="top" offset={[0, -20]} opacity={1} permanent={true} className="custom-tooltip">
                     <span>
                       {titik.Name}
-                      <br/>
-                      {titik.Status}
                       </span>
                   </Tooltip>
                 </Marker>
