@@ -13,7 +13,7 @@ class MapComponent extends Component {
         {Object.entries(groupedData).map(([name, polylinePoints], index) => (
           <div key={index}>
             <h2>{name}</h2>
-            {polylinePoints.length > 3 && (
+            {polylinePoints.length > 1 && (
               <Polyline key={index} positions={polylinePoints} color="black" />
             )}
 
@@ -29,7 +29,7 @@ class MapComponent extends Component {
                   })}
                 >
                   {/* klo ga mau di hover , permanent ganti ke true */}
-                  <Tooltip direction="top" offset={[0, -20]} opacity={1} permanent={true} className="custom-tooltip">
+                  <Tooltip direction="top" offset={[0, -10]} opacity={1} permanent={false} className="custom-tooltip">
                     <span>
                       {titik.Name}
                       </span>

@@ -54,7 +54,7 @@ function CardView() {
           <p>total: {DataSOS}</p>
         </div>
         <div className="p-4 rounded-lg font-bold text-center text-black bg-blue-400 w-64 h-15">
-          <h3>No Status</h3>
+          <h3>Tanpa Status</h3>
           <p>total: {DataNull}</p>
         </div>
     </div>

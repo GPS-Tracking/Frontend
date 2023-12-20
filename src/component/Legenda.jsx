@@ -20,7 +20,7 @@ class Legenda extends React.Component {
           </div>
           <div className="flex items-center">
             <div className="w-4 h-4 mr-2 bg-blue-500"></div>
-            <span>Null</span>
+            <span>Tanpa Status</span>
           </div>
         </div>
       </div>
