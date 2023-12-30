@@ -2,7 +2,7 @@ import React from "react";
 import CardView from "../component/Card";
 import Table from "../component/Table";
 
-function PageData() {
+function Report() {
   return (
     <div className="h-screen w-full p-5 ">
       <CardView />
@@ -11,4 +11,4 @@ function PageData() {
   );
 }
 
-export default PageData;
+export default Report;

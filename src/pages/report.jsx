@@ -1,12 +1,12 @@
 import React from "react";
 import DefaultSidebar from "../component/Sidebar";
-import PageData from "../component/PageData";
+import Report from "../component/Report";
 
 function Data() {
   return (
     <div className="flex">
       <DefaultSidebar />
-      <PageData />
+      <Report />
     </div>
   );
 }

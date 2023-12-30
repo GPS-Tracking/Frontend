@@ -2,8 +2,9 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import Data from './pages/data.jsx'
+import Report from './pages/report.jsx'
 import About from './pages/about.jsx'
+import History from './pages/history.jsx'
 import {
   createBrowserRouter,
   RouterProvider,
@@ -17,8 +18,13 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "/data",
-    element: <Data />,
+    path: "/report",
+    element: <Report />,
+  },
+
+  {
+    path: "/history",
+    element: <History />,
   },
 
   {
