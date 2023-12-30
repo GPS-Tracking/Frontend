@@ -7,14 +7,14 @@ import {
   Typography,
   Tooltip,
 } from "@material-tailwind/react";
-import foto1 from "../assets/img/naufal.png";
-import foto2 from "../assets/img/devin.png";
-import foto3 from "../assets/img/ghiyats.png";
-import foto4 from "../assets/img/steven.png";
-import foto5 from "../assets/img/dosen.jpg";
-import instagramIcon from "../assets/ig.svg";
-import githubIcon from "../assets/github.svg";
-import gunadarmaIcon from "../assets/gunadarma.svg";
+import foto1 from "/src/assets/img/naufal.png";
+import foto2 from "/src/assets/img/devin.png";
+import foto3 from "/src/assets/img/ghiyats.png";
+import foto4 from "/src/assets/img/steven.png";
+import foto5 from "/src/assets/img/dosen.jpg";
+import instagramIcon from "/src/assets/ig.svg";
+import githubIcon from "/src/assets/github.svg";
+import gunadarmaIcon from "/src/assets/gunadarma.svg";
 
 const instagramLinks = [
   "https://www.instagram.com/irawanaufal29/",

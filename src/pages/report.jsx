@@ -1,6 +1,6 @@
 import React from "react";
-import DefaultSidebar from "../component/Sidebar";
-import Report from "../component/Report";
+import DefaultSidebar from "/src/component/Sidebar";
+import Report from "/src/component/report/Report";
 
 function Data() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
-import CardView from "../component/Card";
-import Table from "../component/Table";
+import CardView from "./card";
+import Table from "./table";
 
 function Report() {
   return (

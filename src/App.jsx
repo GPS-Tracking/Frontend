@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import Sidebar from "../src/component/Sidebar";
-import Legenda from "../src/component/Legenda";
 import './App.css';
 import axios from 'axios';
-import MapComponent from '../src/component/MapComponent';
+import Sidebar from "/src/component/Sidebar";
+import Legenda from "/src/component/main/Legenda";
+import MapComponent from "/src/component/main/MapComponent";
+
 
 function App() {
   const [data, setData] = useState([]);
