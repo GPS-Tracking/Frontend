@@ -29,6 +29,8 @@ npm i axios
 `https://react-leaflet.js.org/`
 * Custom-Marker by Pointhi:
 `https://github.com/pointhi/leaflet-color-markers`
+* react-tailwindcss-datepicker by onesine:
+`https://react-tailwindcss-datepicker.vercel.app/`
 
 Run this command for testing
 ```bash
