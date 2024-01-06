@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { EyeIcon, PencilIcon, TrashIcon } from '@heroicons/react/24/solid';
+import {PencilIcon, TrashIcon } from '@heroicons/react/24/solid';
 
 function Table() {
   const [data, setData] = useState([]);

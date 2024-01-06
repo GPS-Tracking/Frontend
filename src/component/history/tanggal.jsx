@@ -1,4 +1,11 @@
 import React, {useState} from "react";
+import {
+    Card,
+    CardBody,
+    CardFooter,
+    Typography,
+    Button,
+  } from "@material-tailwind/react";
 import Datepicker from "react-tailwindcss-datepicker"; 
 
 const Tanggal = () => {
@@ -13,12 +20,26 @@ const Tanggal = () => {
     } 
         
     return (
-        <Datepicker 
-            value={value} 
-            onChange={handleValueChange} 
-            showShortcuts={true}
-            displayFormat={"DD/MM/YYYY"}
-        /> 
+        <Card className="mt-6 w-96">
+
+            <CardBody>
+                <Typography variant="h5" color="blue-gray" className="mb-2">
+                    Pilih Tanggal
+                </Typography>
+
+                <Datepicker 
+                    value={value} 
+                    onChange={handleValueChange} 
+                    showShortcuts={true}
+                    displayFormat={"DD/MM/YYYY"}
+                />
+            </CardBody>
+
+            <CardFooter className="pt-0">
+                <Button>Sumbit</Button>
+            </CardFooter>
+
+        </Card> 
     );
 }; 
 

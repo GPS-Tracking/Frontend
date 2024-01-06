@@ -5,15 +5,13 @@ import Information from "/src/component/about/Information";
 
 function About() {
   return (
-    <>
-      <div className="flex">
-        <DefaultSidebar />
-        <div className="flex flex-wrap justify-center p-5 h-full">
-          <ProfileCard />
-          <Information />
-        </div>
+    <div className="flex">
+      <DefaultSidebar />
+      <div className="flex flex-wrap justify-center p-5 h-full">
+        <ProfileCard />
+        <Information />
       </div>
-    </>
+    </div>
   );
 }
 

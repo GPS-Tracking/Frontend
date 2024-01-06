@@ -1,12 +1,18 @@
 import React from "react";
 import DefaultSidebar from "/src/component/Sidebar";
-import Report from "/src/component/report/Report";
+import CardView from "/src/component/report/card"
+import Table from "/src/component/report/table";
 
 function Data() {
   return (
     <div className="flex">
       <DefaultSidebar />
-      <Report />
+
+      <div>
+        <CardView />
+        <Table />
+      </div>
+    
     </div>
   );
 }
