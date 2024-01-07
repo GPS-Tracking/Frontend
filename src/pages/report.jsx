@@ -1,7 +1,7 @@
 import React from "react";
-import DefaultSidebar from "/src/component/Sidebar";
-import CardView from "/src/component/report/card"
-import Table from "/src/component/report/table";
+import DefaultSidebar from "/src/components/Sidebar";
+import CardView from "/src/components/report/card"
+import Table from "/src/components/report/table";
 
 function Data() {
   return (

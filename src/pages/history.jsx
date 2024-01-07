@@ -1,7 +1,7 @@
 import React from "react";
-import DefaultSidebar from "../component/Sidebar";
-import Tanggal from "../component/history/tanggal";
-import TableHistory from "/src/component/history/tableHistory";
+import DefaultSidebar from "../components/Sidebar";
+import Tanggal from "../components/history/tanggal";
+import TableHistory from "/src/components/history/tableHistory";
 
 
 function History() {
@@ -11,7 +11,7 @@ function History() {
 
             <div className="flex flex-wrap justify-center h-full">
                 <Tanggal/>
-                <div className="p-5">
+                <div className="p-2">
                     <TableHistory/>
                 </div>
             </div>

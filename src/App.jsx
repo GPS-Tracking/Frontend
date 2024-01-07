@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios';
-import Sidebar from "/src/component/Sidebar";
-import Legenda from "/src/component/main/Legenda";
-import MapComponent from "/src/component/main/MapComponent";
+import Sidebar from "/src/components/Sidebar";
+import Legenda from "/src/components/main/Legenda";
+import MapComponent from "/src/components/main/MapComponent";
 
 
 function App() {

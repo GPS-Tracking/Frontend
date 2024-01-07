@@ -1,7 +1,7 @@
 import React from "react";
-import DefaultSidebar from "/src/component/Sidebar";
-import ProfileCard from "/src/component/about/Biodata";
-import Information from "/src/component/about/Information";
+import DefaultSidebar from "/src/components/Sidebar";
+import ProfileCard from "/src/components/about/Biodata";
+import Information from "/src/components/about/Information";
 
 function About() {
   return (
