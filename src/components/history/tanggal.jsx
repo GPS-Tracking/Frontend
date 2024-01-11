@@ -67,7 +67,7 @@ const Tanggal = () => {
                         </div>
                     </div>
   
-                    <CardFooter>
+                    <CardFooter className="p-0 text-center mt-8">
                         <Button onClick={handleSubmit} className="ml-96">
                             Submit
                         </Button>
