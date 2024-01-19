@@ -7,7 +7,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 import Datepicker from "react-tailwindcss-datepicker";
-import TableHistory from "./TableHistory"; // Import the TableHistory component
+import TableHistory from "../history/tableHistory"; // Import the TableHistory component
 
 const Tanggal = () => {
   const [tanggalAwal, setTanggalAwal] = useState(null);
@@ -26,7 +26,35 @@ const Tanggal = () => {
       <Card className="w-auto">
         <CardBody>
           <div className="grid grid-cols-2 gap-10">
-            {/* ... (your date pickers) */}
+            <div>
+              <Typography variant="h5" color="blue-gray" className="mb-3">
+                Tanggal Awal
+              </Typography>
+              <Datepicker
+                showShortcuts={true}
+                useRange={false}
+                asSingle={true}
+                value={tanggalAwal}
+                onChange={handleTanggalAwal}
+                displayFormat={"DD/MM/YYYY"}
+                placeholder={"Tanggal Awal"}
+              />
+            </div>
+
+            <div>
+              <Typography variant="h5" color="blue-gray" className="mb-3">
+                Tanggal Akhir
+              </Typography>
+              <Datepicker
+                showShortcuts={true}
+                useRange={false}
+                asSingle={true}
+                value={tanggalAkhir}
+                onChange={handleTanggalAkhir}
+                displayFormat={"DD/MM/YYYY"}
+                placeholder={"Tanggal Akhir"}
+              />
+            </div>
           </div>
 
           <CardFooter className="p-0 text-center mt-8">
