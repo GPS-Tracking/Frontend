@@ -1,81 +1,46 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
-    Card,
-    CardBody,
-    CardFooter,
-    Typography,
-    Button,
-  } from "@material-tailwind/react";
-import Datepicker from "react-tailwindcss-datepicker"; 
+  Card,
+  CardBody,
+  CardFooter,
+  Typography,
+  Button,
+} from "@material-tailwind/react";
+import Datepicker from "react-tailwindcss-datepicker";
+import TableHistory from "./TableHistory"; // Import the TableHistory component
 
 const Tanggal = () => {
-    /* Tanggal Awal */
-    const [tanggalAwal, setTanggalAwal] = useState(null);
+  const [tanggalAwal, setTanggalAwal] = useState(null);
+  const [tanggalAkhir, setTanggalAkhir] = useState(null);
 
-    const handleTanggalAwal = (newTanggalAwal) => {
-        console.log("newTanggalAwal:", newTanggalAwal);
-        setTanggalAwal(newTanggalAwal);
-    };
+  const handleTanggalAwal = (newTanggalAwal) => {
+    setTanggalAwal(newTanggalAwal);
+  };
 
-    /* Tanggal Akhir */
-    const [tanggalAkhir, setTanggalAkhir] = useState(null);
+  const handleTanggalAkhir = (newTanggalAkhir) => {
+    setTanggalAkhir(newTanggalAkhir);
+  };
 
-    const handleTanggalAkhir = (newTanggalAkhir) => {
-        console.log("newTanggalAkhir:", newTanggalAkhir);
-        setTanggalAkhir(newTanggalAkhir);
-    };
+  return (
+    <div>
+      <Card className="w-auto">
+        <CardBody>
+          <div className="grid grid-cols-2 gap-10">
+            {/* ... (your date pickers) */}
+          </div>
 
-    const handleSubmit = () => {
-        /* summit button */
-    };
+          <CardFooter className="p-0 text-center mt-8">
+            <Button onClick={handleSubmit} className="ml-96">
+              Submit
+            </Button>
+          </CardFooter>
+        </CardBody>
+      </Card>
 
-    return (
-        <div>
-            <Card className="w-auto">
-                <CardBody>
-                    <div className="grid grid-cols-2 gap-10">
-                        <div>
-                            <Typography variant="h5" color="blue-gray" className="mb-3">
-                                Tanggal Awal
-                            </Typography>
-
-                            <Datepicker
-                                showShortcuts={true} 
-                                useRange={false}
-                                asSingle={true}
-                                value={tanggalAwal}
-                                onChange={handleTanggalAwal}
-                                displayFormat={"DD/MM/YYYY"}
-                                placeholder={"Tanggal Awal"}
-                            />
-                        </div>
-
-                        <div>
-                            <Typography variant="h5" color="blue-gray" className="mb-3">
-                                Tanggal Akhir
-                            </Typography>
-
-                            <Datepicker
-                                showShortcuts={true}
-                                useRange={false}
-                                asSingle={true}
-                                value={tanggalAkhir}
-                                onChange={handleTanggalAkhir}
-                                displayFormat={"DD/MM/YYYY"}
-                                placeholder={"Tanggal Akhir"}
-                            />
-                        </div>
-                    </div>
-  
-                    <CardFooter className="p-0 text-center mt-8">
-                        <Button onClick={handleSubmit} className="ml-96">
-                            Submit
-                        </Button>
-                    </CardFooter>
-                </CardBody>
-            </Card>
-        </div>
-    );
-}; 
+      {/* Pass start and end date to TableHistory component */}
+      <TableHistory startDate={tanggalAwal} endDate={tanggalAkhir} />
+    </div>
+  );
+};
 
 export default Tanggal;

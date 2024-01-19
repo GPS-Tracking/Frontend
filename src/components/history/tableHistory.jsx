@@ -1,54 +1,89 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import DataTable from 'react-data-table-component';
 
-function tableHistory() {
-  const [data,setData] = useState([]);
+function TableHistory({ startDate, endDate }) {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const columns = [
+    {
+      name: 'ID',
+      selector: 'ID',
+      sortable: true,
+      width: '10%',
+    },
+    {
+      name: 'Time',
+      selector: 'Time',
+      sortable: true,
+      width: '15%',
+    },
+    {
+      name: 'Name',
+      selector: 'Name',
+      sortable: true,
+      width: '20%',
+    },
+    {
+      name: 'Latitude',
+      selector: 'Latitude',
+      sortable: true,
+      width: '15%',
+    },
+    {
+      name: 'Longitude',
+      selector: 'Longitude',
+      sortable: true,
+      width: '15%',
+    },
+    {
+      name: 'Status',
+      selector: 'Status',
+      sortable: true,
+      width: '15%',
+    },
+  ];
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('http://localhost:8080/data/getAll');
+      setLoading(true);
+      const response = await axios.get('/api/data/getFilteredData', {
+        params: {
+          start: startDate,
+          end: endDate,
+        },
+      });
       setData(response.data);
     } catch (error) {
       console.error(error);
+      setError('Error fetching data');
+    } finally {
+      setLoading(false);
     }
   };
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    if (startDate && endDate) {
+      fetchData();
+    }
+  }, [startDate, endDate]);
 
   return (
     <div>
-      <table className="table-auto w-4/5 border-collapse border border-gray-300 mb-20 ml-32 rounded-xl" style={{ tableLayout: 'fixed' }}>
-        <thead>
-          <tr className="bg-red-500 border-b-2 border-gray-200 text-black">
-            <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '10%' }}>ID</th>
-            <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '15%' }}>Time</th>
-            <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '20%' }}>Name</th>
-            <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '15%' }}>Latitude</th>
-            <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '15%' }}>Longitude</th>
-            <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '15%' }}>Status</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {data.map((item) => (
-              <tr key={item.ID} className="odd:bg-blue-100 even:bg-blue-300">
-                <td className="p-3 text-sm text-black text-center">{item.ID}</td>
-                <td className="p-3 text-sm text-black text-center">{item.Time}</td>
-                <td className="p-3 text-sm text-black text-center">{item.Name}</td>
-                <td className="p-3 text-sm text-black text-center">{item.Lattitude}</td>
-                <td className="p-3 text-sm text-black text-center">{item.Longitude}</td>
-                <td className="p-3 text-sm text-black text-center">{item.Status}</td>
-              </tr>
-              )
-            )
-          }
-        </tbody>
-      </table>
-      
+      {loading && <p>Loading...</p>}
+      {error && <p>Error: {error}</p>}
+      <DataTable
+        title="Filtered Data"
+        columns={columns}
+        data={data}
+        pagination
+        highlightOnHover
+        responsive
+      />
     </div>
   );
 }
 
-export default tableHistory;
+export default TableHistory;

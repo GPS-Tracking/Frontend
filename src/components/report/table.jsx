@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import DataTable from 'react-data-table-component';
-import { PencilIcon, PencilSquareIcon, TrashIcon } from '@heroicons/react/24/solid';
+import { DocumentIcon, PencilSquareIcon, TrashIcon } from '@heroicons/react/24/solid';
 
 function Table() {
   const [data, setData] = useState([]);
@@ -102,36 +102,40 @@ function Table() {
 
   const openCatatanModal = (item) => {
     setSelectedItem(item);
-    setNewCatatan(item.Catatan || ''); // Set the initial value from the selected item
+    setNewCatatan(item.Catatan || '');
   };
 
-
-
   const columns = [
-    { name: 'ID', selector: 'ID', sortable: true },
-    { name: 'Time', selector: 'Time', sortable: true },
-    { name: 'Name', selector: 'Name', sortable: false },
-    { name: 'Latitude', selector: 'Lattitude', sortable: false },
-    { name: 'Longitude', selector: 'Longitude', sortable: false },
-    { name: 'Status', selector: 'Status', sortable: false },
-    { name: 'Catatan', selector: 'Catatan', sortable: false },
+    { name: 'ID', selector: 'ID', sortable: true, width: '8%' },
+    { name: 'Time', selector: 'Time', sortable: true, width: '15%' },
+    { name: 'Name', selector: 'Name', sortable: false, width: '8%' },
+    { name: 'Latitude', selector: 'Lattitude', sortable: false, width: '10%' },
+    { name: 'Longitude', selector: 'Longitude', sortable: false, width: '10%' },
+    { name: 'Status', selector: 'Status', sortable: false, width: '10%' },
+    { name: 'Catatan', selector: 'Catatan', sortable: false, width: '25%',
+      cell: (row) => (
+        <div style={{ maxHeight: '100px', overflowY: 'auto' }}>
+          {row.Catatan}
+        </div>
+      ),
+    },
     {
-            name: 'Action',
-            cell: (row) => (
-                <div>
-                    <button onClick={() => openModal(row)}>
-                        <PencilIcon className="h-7 w-7 p-1 bg-blue-600 rounded-md hover:bg-blue-300" />
-                    </button>
-                    <button onClick={() => handleDelete(row.ID)}>
-                        <TrashIcon className="h-7 w-7 p-1 bg-red-600 rounded-md hover:bg-red-300" />
-                    </button>
-                    <button onClick={() => openCatatanModal(row)}>
-                        <PencilSquareIcon className="h-7 w-7 p-1 bg-yellow-600 rounded-md hover:bg-yellow-300" />
-                    </button>
-                </div>
-            ),
-        },
-    ];
+      name: 'Action', width: '15%',
+      cell: (row) => (
+        <div>
+          <button onClick={() => openModal(row)}>
+            <PencilSquareIcon className="h-7 w-7 p-1 bg-blue-600 rounded-md hover:bg-blue-300" />
+          </button>
+          <button onClick={() => openCatatanModal(row)}>
+            <DocumentIcon className="h-7 w-7 p-1 bg-yellow-600 rounded-md hover:bg-yellow-300" />
+          </button>
+          <button onClick={() => handleDelete(row.ID)}>
+            <TrashIcon className="h-7 w-7 p-1 bg-red-600 rounded-md hover:bg-red-300" />
+          </button>
+        </div>
+      ),
+    },
+  ];
 
   return (
     <div className="container mx-auto p-5 align-middle">
