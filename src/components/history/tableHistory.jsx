@@ -71,17 +71,19 @@ function TableHistory({ startDate, endDate }) {
   }, [startDate, endDate]);
 
   return (
-    <div>
+    <div className="w-full max-w-2xl mx-auto">
       {loading && <p>Loading...</p>}
       {error && <p>Error: {error}</p>}
-      <DataTable
-        title="Filtered Data"
-        columns={columns}
-        data={data}
-        pagination
-        highlightOnHover
-        responsive
-      />
+      {!loading && !error && data.length > 0 && (
+        <DataTable
+          title="Filtered Data"
+          columns={columns}
+          data={data}
+          pagination
+          highlightOnHover
+          responsive
+        />
+      )}
     </div>
   );
 }

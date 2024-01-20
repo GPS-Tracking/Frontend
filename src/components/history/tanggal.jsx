@@ -7,7 +7,7 @@ import {
   Button,
 } from "@material-tailwind/react";
 import Datepicker from "react-tailwindcss-datepicker";
-import TableHistory from "../history/tableHistory"; // Import the TableHistory component
+import TableHistory from "../history/tableHistory";
 
 const Tanggal = () => {
   const [tanggalAwal, setTanggalAwal] = useState(null);
@@ -21,8 +21,18 @@ const Tanggal = () => {
     setTanggalAkhir(newTanggalAkhir);
   };
 
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch(`/api/data/getFilteredData?start=${tanggalAwal}&end=${tanggalAkhir}`);
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
   return (
-    <div>
+    <div className="flex flex-col items-center space-y-4">
       <Card className="w-auto">
         <CardBody>
           <div className="grid grid-cols-2 gap-10">
@@ -58,9 +68,7 @@ const Tanggal = () => {
           </div>
 
           <CardFooter className="p-0 text-center mt-8">
-            <Button onClick={handleSubmit} className="ml-96">
-              Submit
-            </Button>
+            <Button onClick={handleSubmit}>Submit</Button>
           </CardFooter>
         </CardBody>
       </Card>
