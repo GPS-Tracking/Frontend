@@ -60,14 +60,14 @@ export function DefaultSidebar() {
               </ListItem>
             </Link>
 
-            <Link to="/history">
+            {/* <Link to="/history">
               <ListItem>
                 <ListItemPrefix>
                   <ClockIcon className="h-5 w-5" />
                 </ListItemPrefix>
                 <span>History</span>
               </ListItem>
-            </Link>
+            </Link> */}
           </List>
         )}
 

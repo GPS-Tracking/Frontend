@@ -49,20 +49,19 @@ function TableHistory({ startDate, endDate }) {
   const fetchData = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('/api/data/getFilteredData', {
-        params: {
-          start: startDate,
-          end: endDate,
-        },
-      });
-      setData(response.data);
+      console.log("Fetching data with startDate:", startDate, "and endDate:", endDate);
+      const response = await fetch(`/api/data/getFilteredData?start=${tanggalAwal}&end=${tanggalAkhir}`);
+      const data = await response.json();
+      console.log("Fetched data:", data);
+      setData(data);
+      setError(null);
     } catch (error) {
       console.error(error);
       setError('Error fetching data');
     } finally {
       setLoading(false);
     }
-  };
+  };  
 
   useEffect(() => {
     if (startDate && endDate) {

@@ -6,6 +6,8 @@ import { DocumentIcon, PencilSquareIcon, TrashIcon } from '@heroicons/react/24/s
 function Table() {
   const [data, setData] = useState([]);
   const [selectedItem, setSelectedItem] = useState(null);
+  const [showStatusModal, setShowStatusModal] = useState(false);
+  const [showCatatanModal, setShowCatatanModal] = useState(false);
   const [newStatus, setNewStatus] = useState('');
   const [showDeleteConfirmation, setShowDeleteConfirmation] = useState(false);
   const [deleteItemId, setDeleteItemId] = useState(null);
@@ -25,7 +27,7 @@ function Table() {
               item.ID === selectedItem.ID ? { ...item, Catatan: newCatatan } : item
           );
           setData(updatedData);
-          closeModal();
+          closeCatatanModal();
       } catch (error) {
           console.error(error);
       }
@@ -84,25 +86,34 @@ function Table() {
         item.ID === selectedItem.ID ? { ...item, Status: newStatus } : item
       );
       setData(updatedData);
-      closeModal();
+      closeStatusModal();
     } catch (error) {
       console.error(error);
     }
   };
 
-  const openModal = (item) => {
+  const openStatusModal = (item) => {
     setSelectedItem(item);
     setNewStatus(item.Status);
+    setShowStatusModal(true);
   };
 
-  const closeModal = () => {
+  const closeStatusModal = () => {
     setSelectedItem(null);
     setNewStatus('');
+    setShowStatusModal(false);
   };
 
   const openCatatanModal = (item) => {
     setSelectedItem(item);
     setNewCatatan(item.Catatan || '');
+    setShowCatatanModal(true);
+  };
+
+  const closeCatatanModal = () => {
+    setSelectedItem(null);
+    setNewCatatan('');
+    setShowCatatanModal(false);
   };
 
   const columns = [
@@ -123,7 +134,7 @@ function Table() {
       name: 'Action', width: '15%',
       cell: (row) => (
         <div>
-          <button onClick={() => openModal(row)}>
+          <button onClick={() => openStatusModal(row)}>
             <PencilSquareIcon className="h-7 w-7 p-1 bg-blue-600 rounded-md hover:bg-blue-300" />
           </button>
           <button onClick={() => openCatatanModal(row)}>
@@ -158,7 +169,7 @@ function Table() {
       />
 
       {/* Modal for updating status */}
-      {selectedItem && (
+      {showStatusModal && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-75">
           <div className="bg-white p-8 rounded-md">
             <label className="block mb-2 text-sm font-semibold text-gray-600">Update Status</label>
@@ -180,7 +191,7 @@ function Table() {
               Ya
             </button>
             <button
-              onClick={closeModal}
+              onClick={closeStatusModal}
               className="w-full p-2 bg-gray-400 text-white rounded-md hover:bg-gray-300 mt-2"
             >
               Batal
@@ -188,6 +199,7 @@ function Table() {
           </div>
         </div>
       )}
+
 
       {/* Confirmation Modal for delete */}
       {showDeleteConfirmation && (
@@ -213,7 +225,7 @@ function Table() {
       )}
 
       {/* Modal for updating Catatan */}
-    {selectedItem && (
+      {showCatatanModal && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-75">
             <div className="bg-white p-8 rounded-md">
                 <label className="block mb-2 text-sm font-semibold text-gray-600">Update Catatan</label>
@@ -229,7 +241,7 @@ function Table() {
                     Ya
                 </button>
                 <button
-                    onClick={closeModal}
+                    onClick={closeCatatanModal}
                     className="w-full p-2 bg-gray-400 text-white rounded-md hover:bg-gray-300 mt-2"
                 >
                     Batal

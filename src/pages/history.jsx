@@ -9,12 +9,12 @@ function History() {
       <DefaultSidebar />
 
       <div className="flex flex-wrap justify-center h-full">
-        <Tanggal />
-      </div>
-
-      <div className="p-2">
+        {/* Use TableHistory instead of Tanggal */}
         <TableHistory />
       </div>
+
+      {/* Remove the unused Tanggal component */}
+      <Tanggal />
     </div>
   );
 }
