@@ -47,30 +47,18 @@ function Table() {
   }, []);
 
   const handleDelete = async (id) => {
-    setShowDeleteConfirmation(true);
-    setDeleteItemId(id);
-  };
-
-  const confirmDelete = async () => {
     try {
       const response = await axios.delete(`http://localhost:8080/data/delete`, {
         params: {
-          id: deleteItemId,
+          id: id,
         },
       });
-      console.log(`Deleted post with ID ${deleteItemId}`);
-      const updatedData = data.filter((item) => item.ID !== deleteItemId);
+      console.log(`Deleted post with ID ${id}`);
+      const updatedData = data.filter((item) => item.ID !== id);
       setData(updatedData);
-      setShowDeleteConfirmation(false);
-      setDeleteItemId(null);
     } catch (error) {
       console.error(error);
     }
-  };
-
-  const cancelDelete = () => {
-    setShowDeleteConfirmation(false);
-    setDeleteItemId(null);
   };
 
   const handleUpdateStatus = async () => {
@@ -149,24 +137,40 @@ function Table() {
   ];
 
   return (
-    <div className="container mx-auto p-5 align-middle">
-      <DataTable
-        title="Tabel Tracking"
-        columns={columns}
-        data={data}
-        pagination
-        highlightOnHover
-        striped
-        noHeader
-        className="bg-white shadow-md rounded-md"
-        customStyles={{
-          headCells: {
-            style: {
-              textAlign: 'center',
-            },
-          },
-        }}
-      />
+    <div>
+      <table className="table-auto w-4/5 border-collapse border border-gray-300 mb-20 ml-32 rounded-xl" style={{ tableLayout: 'fixed' }}>
+        <thead>
+        <tr className="bg-red-500 border-b-2 border-gray-200 text-black">
+          <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '10%' }}>ID</th>
+          <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '15%' }}>Time</th>
+          <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '20%' }}>Name</th>
+          <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '15%' }}>Latitude</th>
+          <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '15%' }}>Longitude</th>
+          <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '15%' }}>Status</th>
+          <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '20%' }}>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+          {data.map((item) => (
+             <tr key={item.ID} className="odd:bg-blue-100 even:bg-blue-300">
+             <td className="p-3 text-sm text-black text-center">{item.ID}</td>
+             <td className="p-3 text-sm text-black text-center">{item.Time}</td>
+             <td className="p-3 text-sm text-black text-center">{item.Name}</td>
+             <td className="p-3 text-sm text-black text-center">{item.Lattitude}</td>
+             <td className="p-3 text-sm text-black text-center">{item.Longitude}</td>
+             <td className="p-3 text-sm text-black text-center">{item.Status}</td>
+             <td className="p-3 text-sm text-black text-center">
+                <button onClick={() => handleDelete(item.ID)}>
+                  <TrashIcon className="h-10 w-10 p-2 bg-yellow-600 rounded-md hover:bg-yellow-300" />
+                </button>
+                <button onClick={() => openModal(item)}>
+                  <PencilIcon className="h-10 w-10 p-2 bg-blue-600 rounded-md hover:bg-blue-300" />
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
 
       {/* Modal for updating status */}
       {showStatusModal && (
@@ -178,9 +182,8 @@ function Table() {
               value={newStatus}
               onChange={(e) => setNewStatus(e.target.value === 'null' ? null : e.target.value)}
             >
-              <option value="---">Pilih Status</option>
-              <option value="AMAN">Aman</option>
-              <option value="WARNING">Warning</option>
+              <option value="Aman">Aman</option>
+              <option value="Warning">Warning</option>
               <option value="SOS">SOS</option>
               <option value="null">Tanpa Status</option>
             </select>
@@ -188,7 +191,7 @@ function Table() {
               onClick={handleUpdateStatus}
               className="w-full p-2 bg-blue-600 text-white rounded-md hover:bg-blue-300"
             >
-              Ya
+              Confirm
             </button>
             <button
               onClick={closeStatusModal}
@@ -248,7 +251,7 @@ function Table() {
                 </button>
             </div>
         </div>
-    )}
+      )}
     </div>
   );
 }
