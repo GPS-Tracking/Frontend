@@ -32,6 +32,8 @@ class MapComponent extends Component {
                   <Tooltip direction="top" offset={[0, -10]} opacity={1} permanent={false} className="custom-tooltip">
                     <span>
                       {titik.Name}
+                      <br />
+                      {titik.Catatan}
                       </span>
                   </Tooltip>
                 </Marker>
