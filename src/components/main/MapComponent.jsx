@@ -7,8 +7,8 @@ class MapComponent extends Component {
     const { data, groupedData, warnaMarker } = this.props;
 
     return (
-      <MapContainer center={[-6.354881750178463, 106.84146110607826]} zoom={10} className=''>
-        <TileLayer attribution="&copy; <a>Kompres IOT 'Bismillah Juara'</a>" url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+      <MapContainer center={[-6.354881750178463, 106.84146110607826]} zoom={30} className=''>
+        <TileLayer attribution="&copy; <a>PKKM IF Kartanagari Kelompok 2</a>" url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
         {Object.entries(groupedData).map(([name, polylinePoints], index) => (
           <div key={index}>
@@ -31,11 +31,9 @@ class MapComponent extends Component {
                   {/* klo ga mau di hover , permanent ganti ke true */}
                   <Tooltip direction="top" offset={[0, -10]} opacity={1} permanent={false} className="custom-tooltip">
                     <span>
-                      Data ke-{titik.ID}
+                      {titik.Name}
                       <br />
-                      Alat : {titik.Name}
-                      <br />
-                      Catatan : {titik.Catatan}
+                      {titik.Catatan}
                       </span>
                   </Tooltip>
                 </Marker>

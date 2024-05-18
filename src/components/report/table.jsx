@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import DataTable from 'react-data-table-component';
 import { DocumentIcon, PencilSquareIcon, TrashIcon } from '@heroicons/react/24/solid';
 
 function Table() {
@@ -13,9 +12,24 @@ function Table() {
   const [deleteItemId, setDeleteItemId] = useState(null);
   const [newCatatan, setNewCatatan] = useState('');
 
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const handleUpdateCatatan = async () => {
+    try {
+      const response = await axios.put(
+        `http://localhost:8080/data/updateCatatan/${selectedItem.ID}`,
+        {
+          catatan: newCatatan,
+        }
+      );
+      console.log(`Updated catatan for ID ${selectedItem.ID}`);
+      const updatedData = data.map((item) =>
+        item.ID === selectedItem.ID ? { ...item, Catatan: newCatatan } : item
+      );
+      setData(updatedData);
+      closeCatatanModal();
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const fetchData = async () => {
     try {
@@ -26,6 +40,10 @@ function Table() {
     }
   };
 
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   const handleDelete = async (id) => {
     setShowDeleteConfirmation(true);
     setDeleteItemId(id);
@@ -33,11 +51,12 @@ function Table() {
 
   const confirmDelete = async () => {
     try {
-      await axios.delete(`http://localhost:8080/data/delete`, {
+      const response = await axios.delete(`http://localhost:8080/data/delete`, {
         params: {
           id: deleteItemId,
         },
       });
+      console.log(`Deleted post with ID ${deleteItemId}`);
       const updatedData = data.filter((item) => item.ID !== deleteItemId);
       setData(updatedData);
       setShowDeleteConfirmation(false);
@@ -54,29 +73,18 @@ function Table() {
 
   const handleUpdateStatus = async () => {
     try {
-      await axios.put(`http://localhost:8080/data/updateStatus/${selectedItem.ID}`, {
-        status: newStatus,
-      });
+      const response = await axios.put(
+        `http://localhost:8080/data/updateStatus/${selectedItem.ID}`,
+        {
+          status: newStatus,
+        }
+      );
+      console.log(`Updated status for ID ${selectedItem.ID}`);
       const updatedData = data.map((item) =>
         item.ID === selectedItem.ID ? { ...item, Status: newStatus } : item
       );
       setData(updatedData);
       closeStatusModal();
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const handleUpdateCatatan = async () => {
-    try {
-      await axios.put(`http://localhost:8080/data/updateCatatan/${selectedItem.ID}`, {
-        catatan: newCatatan,
-      });
-      const updatedData = data.map((item) =>
-        item.ID === selectedItem.ID ? { ...item, Catatan: newCatatan } : item
-      );
-      setData(updatedData);
-      closeCatatanModal();
     } catch (error) {
       console.error(error);
     }
@@ -106,80 +114,50 @@ function Table() {
     setShowCatatanModal(false);
   };
 
-  const columns = [
-    {
-      name: 'ID',
-      selector: row => row.ID,
-      sortable: true,
-      width: '5%',
-    },
-    {
-      name: 'Time',
-      selector: row => row.Time,
-      sortable: true,
-      width: '15%',
-    },
-    {
-      name: 'Name',
-      selector: row => row.Name,
-      sortable: true,
-      width: '10%',
-    },
-    {
-      name: 'Latitude',
-      selector: row => row.Lattitude,
-      sortable: true,
-      width: '10%',
-    },
-    {
-      name: 'Longitude',
-      selector: row => row.Longitude,
-      sortable: true,
-      width: '10%',
-    },
-    {
-      name: 'Status',
-      selector: row => row.Status,
-      sortable: true,
-      width: '10%',
-    },
-    {
-      name: 'Catatan',
-      selector: row => row.Catatan,
-      sortable: false,
-      cell: row => <div style={{ maxHeight: '100px', overflowY: 'auto' }}>{row.Catatan}</div>,
-      width: '25%',
-    },
-    {
-      name: 'Action',
-      button: true,
-      cell: row => (
-        <div className="flex space-x-2">
-          <button onClick={() => openStatusModal(row)}>
-            <PencilSquareIcon className="h-7 w-7 p-1 bg-blue-600 rounded-md hover:bg-blue-300" />
-          </button>
-          <button onClick={() => openCatatanModal(row)}>
-            <DocumentIcon className="h-7 w-7 p-1 bg-yellow-600 rounded-md hover:bg-yellow-300" />
-          </button>
-          <button onClick={() => handleDelete(row.ID)}>
-            <TrashIcon className="h-7 w-7 p-1 bg-red-600 rounded-md hover:bg-red-300" />
-          </button>
-        </div>
-      ),
-      width: '10%',
-    },
-  ];
-
   return (
-    <div className="table-container container mx-auto p-5 w-full overflow-x-auto">
-      <DataTable
-        columns={columns}
-        data={data}
-        pagination
-        responsive
-        className="data-table w-full"
-      />
+    <div className="container mx-auto p-5 align-middle">
+      <table className="table">
+        <thead>
+          <tr className="bg-red-500 border-b-2 border-gray-200 text-black">
+          <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '10%' }}>ID</th>
+          <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '15%' }}>Time</th>
+          <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '20%' }}>Name</th>
+          <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '15%' }}>Latitude</th>
+          <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '15%' }}>Longitude</th>
+          <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '15%' }}>Status</th>
+          <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '25%' }}>Catatan</th>
+          <th className="p-3 text-sm font-semibold tracking-wide" style={{ width: '10%' }}>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+          {data.map((row) => (
+            <tr key={row.ID} className="odd:bg-blue-100 even:bg-blue-300">
+              <td className="p-3 text-sm text-black text-center">{row.ID}</td>
+              <td className="p-3 text-sm text-black text-center">{row.Time}</td>
+              <td className="p-3 text-sm text-black text-center">{row.Name}</td>
+              <td className="p-3 text-sm text-black text-center">{row.Lattitude}</td>
+              <td className="p-3 text-sm text-black text-center">{row.Longitude}</td>
+              <td className="p-3 text-sm text-black text-center">{row.Status}</td>
+              <td className="p-3 text-sm text-black text-center">
+                <div style={{ maxHeight: '100px', overflowY: 'auto' }}>{row.Catatan}</div>
+              </td>
+              <td className="p-3 text-sm text-black text-center">
+                <button onClick={() => openStatusModal(row)}>
+                  <PencilSquareIcon className="h-7 w-7 p-1 bg-blue-600 rounded-md hover:bg-blue-300" />
+                </button>
+                <button onClick={() => openCatatanModal(row)}>
+                  <DocumentIcon className="h-7 w-7 p-1 bg-yellow-600 rounded-md hover:bg-yellow-300" />
+                </button>
+                <button onClick={() => handleDelete(row.ID)}>
+                  <TrashIcon className="h-7 w-7 p-1 bg-red-600 rounded-md hover:bg-red-300" />
+                </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
 
+      {/* Modal for updating status */}
       {showStatusModal && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-75">
           <div className="bg-white p-8 rounded-md">
@@ -211,6 +189,7 @@ function Table() {
         </div>
       )}
 
+      {/* Confirmation Modal for delete */}
       {showDeleteConfirmation && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-75">
           <div className="bg-white p-8 rounded-md">
@@ -233,6 +212,7 @@ function Table() {
         </div>
       )}
 
+      {/* Modal for updating Catatan */}
       {showCatatanModal && (
         <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-gray-800 bg-opacity-75">
           <div className="bg-white p-8 rounded-md">
