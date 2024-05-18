@@ -116,31 +116,31 @@ function Table() {
     {
       name: 'Time',
       selector: row => row.Time,
-      sortable: true,
+      sortable: false,
       width: '15%',
     },
     {
       name: 'Name',
       selector: row => row.Name,
-      sortable: true,
+      sortable: false,
       width: '10%',
     },
     {
       name: 'Latitude',
       selector: row => row.Lattitude,
-      sortable: true,
+      sortable: false,
       width: '10%',
     },
     {
       name: 'Longitude',
       selector: row => row.Longitude,
-      sortable: true,
+      sortable: false,
       width: '10%',
     },
     {
       name: 'Status',
       selector: row => row.Status,
-      sortable: true,
+      sortable: false,
       width: '10%',
     },
     {
@@ -171,7 +171,7 @@ function Table() {
   ];
 
   return (
-    <div className="table-container container mx-auto p-5 w-full overflow-x-auto">
+    <div className="table-container mx-auto w-full overflow-x-auto">
       <DataTable
         columns={columns}
         data={data}

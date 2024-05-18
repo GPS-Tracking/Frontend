@@ -10,7 +10,6 @@ function CardView() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        
         const response1 = await axios.get('http://localhost:8080/status/aman');
         const jumlahDeviceAman = response1.data[0]?.Jumlah_Device_Aman || 0;
         setDataAman(jumlahDeviceAman);
@@ -26,41 +25,34 @@ function CardView() {
         const response3 = await axios.get('http://localhost:8080/status/SOS');
         const jumlahDeviceSOS = response3.data[0]?.Jumlah_Device_SOS || 0;
         setDataSOS(jumlahDeviceSOS);
-
-
-        
-
       } catch (error) {
         console.error(error);
       }
     };
     
-    console.log(`data : ${DataNull}`)
     fetchData();
   }, []);
 
   return (
-    <div className="flex justify-center items-center gap-5 mb-10 p-7">
-        <div className="p-4 rounded-lg font-bold text-center text-black bg-green-600 w-64 h-15">
+    <div className="flex flex-wrap justify-center gap-5 mb-10 p-7">
+        <div className="flex flex-col items-center p-4 rounded-lg font-bold text-center text-black bg-green-600 md:w-64 h-15">
           <h3>Aman</h3>
           <p>total: {DataAman}</p>
         </div>
-        <div className="p-4 rounded-lg font-bold text-center text-black bg-yellow-600 w-64 h-15">
+        <div className="flex flex-col items-center p-4 rounded-lg font-bold text-center text-black bg-yellow-600 md:w-64 h-15">
           <h3>Warning</h3>
           <p>total: {DataWarning}</p>
         </div>
-        <div className="p-4 rounded-lg font-bold text-center text-black bg-red-600 w-64 h-15">
+        <div className="flex flex-col items-center p-4 rounded-lg font-bold text-center text-black bg-red-600 md:w-64 h-15">
           <h3>SOS</h3>
           <p>total: {DataSOS}</p>
         </div>
-        <div className="p-4 rounded-lg font-bold text-center text-black bg-blue-400 w-64 h-15">
+        <div className="flex flex-col items-center p-4 rounded-lg font-bold text-center text-black bg-blue-400 md:w-64 h-15">
           <h3>Tanpa Status</h3>
           <p>total: {DataNull}</p>
         </div>
     </div>
-    
   );
 }
 
-//
 export default CardView;

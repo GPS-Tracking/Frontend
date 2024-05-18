@@ -9,10 +9,8 @@ function Data() {
     <div className="flex h-screen w-screen">
       <DefaultSidebar />
       <Card className="flex flex-col flex-grow p-5 shadow-xl shadow-blue-gray-900/5">
-        <div className="flex justify-around p-4">
+      <div className="flex flex-wrap justify-center p-5">
           <CardView />
-        </div>
-        <div className="flex-grow overflow-auto p-4">
           <Table />
         </div>
       </Card>

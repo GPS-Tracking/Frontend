@@ -9,12 +9,18 @@ import {
 } from "@material-tailwind/react";
 import foto1 from "/src/assets/img/naufal.png";
 import foto2 from "/src/assets/img/ghiyats.png";
-import instagramIcon from "/src/assets/ig.svg";
+import instagramIcon from "/src/assets/instagram.svg";
+import linkedInIcon from "/src/assets/linkedin.svg";
 import githubIcon from "/src/assets/github.svg";
 
 const instagramLinks = [
   "https://www.instagram.com/irawanaufal29/",
   "https://www.instagram.com/ghiyats.syhd/",
+];
+
+const linkedInLinks = [
+  "https://www.linkedin.com/in/irawanaufal29",
+  "https://www.linkedin.com/in/ghiyats-ibnu-syahied-883ba121a",
 ];
 
 const githubLinks = [
@@ -54,6 +60,15 @@ export function ProfileCard() {
                   <img src={instagramIcon} alt="Instagram" className="w-6 h-6" />
                 </a>
               </Tooltip>
+              <Tooltip content="LinkedIn">
+                <a
+                  href={linkedInLinks[0]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={linkedInIcon} alt="LinkedIn" className="w-6 h-6" />
+                </a>
+              </Tooltip>
               <Tooltip content="GitHub">
                 <a
                   href={githubLinks[0]}
@@ -90,6 +105,15 @@ export function ProfileCard() {
                   rel="noopener noreferrer"
                 >
                   <img src={instagramIcon} alt="Instagram" className="w-6 h-6" />
+                </a>
+              </Tooltip>
+              <Tooltip content="LinkedIn">
+                <a
+                  href={linkedInLinks[1]}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={linkedInIcon} alt="LinkedIn" className="w-6 h-6" />
                 </a>
               </Tooltip>
               <Tooltip content="GitHub">
