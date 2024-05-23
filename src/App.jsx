@@ -22,7 +22,6 @@ function App() {
     fetchData();
   }, []);
 
-  // Grouping titik gps by nama
   const groupedData = {};
   data.forEach(titik => {
     if (!groupedData[titik.Name]) {
@@ -35,9 +34,9 @@ function App() {
     switch (status) {
       case "SOS":
         return "red";
-      case "Warning":
+      case "WARNING":
         return "gold";
-      case "Aman":
+      case "AMAN":
         return "green";
       default:
         return "blue";

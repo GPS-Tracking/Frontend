@@ -35,6 +35,8 @@ class MapComponent extends Component {
                       <br />
                       Alat : {titik.Name}
                       <br />
+                      Status : {titik.Status}
+                      <br />
                       Catatan : {titik.Catatan}
                       </span>
                   </Tooltip>

@@ -190,8 +190,8 @@ function Table() {
               onChange={(e) => setNewStatus(e.target.value === 'null' ? null : e.target.value)}
             >
               <option value="---">Pilih Status</option>
-              <option value="Aman">Aman</option>
-              <option value="Warning">Warning</option>
+              <option value="AMAN">AMAN</option>
+              <option value="WARNING">WARNING</option>
               <option value="SOS">SOS</option>
               <option value="null">Tanpa Status</option>
             </select>
